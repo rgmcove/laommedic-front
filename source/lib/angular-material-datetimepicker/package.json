@@ -26,7 +26,7 @@
     "test-infra"
   ],
   "dependencies": {
-    "moment": "~2.10.2",
+    "moment": "~2.24.0",
     "angular-material": "~1.0.6"
   },
   "repository": {
