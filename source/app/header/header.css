@@ -1,0 +1,158 @@
+.header,
+.desplegar,
+.e {
+  margin: auto;
+  width: 100%;
+  background-color: #0d47a1;
+  z-index: 2;
+}
+.barra {
+  margin: 0;
+  padding: 0;
+}
+.e,
+.desplegar {
+  display: none;
+  z-index: 1;
+}
+.desplegar-menu {
+  width: 100px;
+}
+.login,
+.barra {
+  display: inline-block;
+}
+.posicion {
+  position: fixed;
+  z-index: 2;
+}
+.casita {
+  margin-right: 3px;
+}
+.menu,
+.items,
+.sub-item {
+  list-style: none;
+}
+.items,
+.sub-item {
+  border: 1px solid #fff;
+}
+.items {
+  width: 200px;
+  z-index: 2;
+}
+.menu {
+  padding-top: 5px;
+  display: inline-block;
+}
+.desplegar-menu,
+.letra {
+  background-color: #0d47a1;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 12px;
+  display: block;
+  font-size: 18px;
+}
+.menu:hover,
+.desplegar-menu:hover,
+.letra:hover {
+  background-color: #1b9bff;
+  color: #fff;
+}
+.sub-menu,
+.sub-menuItems {
+  display: none;
+  position: absolute;
+  z-index: 2;
+}
+.seccion-iniciada {
+  list-style: none;
+  color: #fff;
+  display: inline-block;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  margin-right: 20px;
+  margin-bottom: 0;
+}
+.menu:hover > .sub-menu {
+  display: block;
+  -moz-transition: all 1s ease 0.2s;
+  -webkit-transition: all 1s ease 0.2s;
+  -o-transition: all 1s ease 0.2s;
+  transition: all 1s ease 0.2s;
+}
+.items:hover > .sub-menuItems {
+  display: block;
+  -moz-transition: all 1s ease 0.2s;
+  -webkit-transition: all 1s ease 0.2s;
+  -o-transition: all 1s ease 0.2s;
+  transition: all 1s ease 0.2s;
+}
+.items {
+  position: relative;
+  z-index: 2;
+}
+.sub-menuItems {
+  left: 160px;
+  top: 0;
+  z-index: 2;
+}
+.cerrar {
+  font-size: 15px;
+  background-color: #0d47a1;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 12px;
+  list-style: none;
+}
+.cerrar:hover {
+  background-color: #1b9bff;
+  color: #fff;
+}
+.seccion-cerrada {
+  position: absolute;
+  rigth: -100px;
+  width: 150px;
+  font-size: 15px;
+  list-style: none;
+  border: 1px solid #fff;
+}
+.sub-item {
+  width: 150px;
+}
+@media screen and (max-width: 1000px) {
+  .seccion-iniciada,
+  .seccion-cerrada,
+  .cerrar {
+    display: inline-block !important;
+  }
+  .e {
+    display: block;
+  }
+  .desplegar {
+    display: block;
+    position: fixed;
+  }
+  .menu {
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    width: 100%;
+  }
+  .header {
+    display: none;
+  }
+  .mostrar:hover > .header {
+    display: block;
+    top: 3em;
+  }
+}
+@media screen and (max-width: 700px) {
+  .seccion-iniciada {
+    float: rigth;
+  }
+}
+.navbar-form {
+  margin-right: 0.5px;
+}

@@ -1,0 +1,79 @@
+<div class="mostrar">
+<div class="e">
+	<a href="" class="desplegar-menu">Menu <b class="caret"></b></a>
+</div>
+
+
+<nav class="header" ng-controller="LoginCtrl as login">
+    <ul class="barra">
+      <li class="menu" ng-hide="login.isAuthenticated()"><a class="letra" href="#/"><img class="casita" src="../../img/home-page.svg" width="20px" height="30px"/>Inicio</a></li>
+      <li class="menu" ng-show="login.isRecep()"><a class="letra" href="#/recepcionista"><img class="casita" src="../../img/home-page.svg" width="20px" height="30px"/>Inicio</a></li>
+      <li ng-show="login.isRecep()" class="menu"><a class="letra" href="#/usuarios/list">Lista de paciente</a></li>
+      <li ng-show="login.isRecep()" class="menu"><a class="letra" href="#/citas/create">Agendar cita</a></li>
+      <li ng-show="login.isRecep()" class="menu"><a class="letra" href="#/agenda/list">Consultar citas</a></li>
+    </ul>
+    <ul class="seccion-iniciada"
+        ng-show="login.isAuthenticated()">
+        <li class="menu">
+            <a href=""
+               class="letra">{{login.getCurrentUser() | uppercase}}
+                <span class="caret">
+            </a>
+            <ul class="sub-menu">
+                <li class="seccion-cerrada">
+                    <a class="cerrar" ng-click="login.logout()">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+  </nav>
+
+</div>
+
+<div class="form-group centrado">
+    <div layout="column" ng-cloak>
+        <md-content layout-padding class="formuAgen">
+            <h2 class="Titulo">ACTUALIZAR CITA MEDICA</h2>
+            <form name="agendaCreate">
+                <!--SOLO FECHA-->
+								<!--div layout-gt-md="row" layout="column" layout-align-gt-md="center center">
+                    <md-input-container flex-gt-md="30">
+                        <label>Fecha Cita Medica</label>
+                        <input name="fechacita" time="true" date="true" mdc-datetime-picker type="text" id="date" placeholder="Fecha Cita Medica" required ng-model="vm.cita.fechaCita">
+                        <div ng-messages="agendaCreate.fechacita.$error">
+                            <div ng-message="required">Este campo es requerido.</div>
+                        </div>
+                    </md-input-container>
+                    <div flex-gt-md="grow" flex-md="initial" ex-source-code target="input"></div>
+                </div-->
+
+								<div layout-gt-md="row" layout="column" layout-align-gt-md="center center">
+									<md-input-container required flex-gt-md="30">
+										<input time="true" date="true" mdc-datetime-picker type="text" id="date" placeholder="Fecha Cita" ng-model="vm.cita.fechaCita" min-date="vm.minDate" max-date="">
+									</md-input-container>
+									<div flex-gt-md="grow" flex-md="initial" ex-source-code target="input"></div>
+									<div ng-messages="funcionariosCreate.date.$error">
+										<div ng-message="required">Este campo es requerido.</div>
+									</div>
+								</div>
+
+								<md-autocomplete disabled="ctrl.isDisabled" md-selected-item="vm.cita.idUsuario" md-search-text="vm.searchTextUsuarios" md-items="item in vm.queryUsuariosUsr(vm.searchTextUsuarios)" md-item-text="item.idIdentificacion + ' - ' + item.primerNombre + ' ' + item.primerApellido" md-min-length="1" md-floating-label="Identificacion Del Paciente"
+												md-input-name="identificacion" required>
+									<md-item-template>
+										<span md-highlight-text="vm.searchTextUsuarios" md-highlight-flags="^i">{{item.idIdentificacion}} - {{item.primerNombre}} {{item.primerApellido}}</span>
+									</md-item-template>
+									<md-not-found>El Numero De Identificacion "{{vm.searchTextUsuarios}}" no fue encontrado.</md-not-found>
+									<div ng-messages="agendaCreate.identificacion.$error" ng-if="agendaCreate.identificacion.$touched">
+										<div ng-message="required">Debes introducir un Numero de Identificación.</div>
+									</div>
+								</md-autocomplete>
+								<section class="Botones">
+                  <md-button ng-click="vm.update()" class="guardaragenda">Actualizar</md-button>
+                  <md-button ng-href="#/agenda/list" class="cancelaragenda">Cancelar</md-button>
+                </section>
+            </form>
+        </md-content>
+
+    </div>
+</div>
+<piepagina>

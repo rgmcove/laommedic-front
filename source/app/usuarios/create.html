@@ -1,0 +1,300 @@
+<div class="mostrar">
+	<div class=" e">
+		<a href="" class="desplegar-menu">Menu <b class="caret"></b></a>
+	</div>
+
+	<nav class="header" ng-controller="LoginCtrl as login">
+		<ul class="barra">
+			<li ng-hide="login.isAuthenticated()" class="menu">
+				<a class="letra" href="#"><img class="casita" src="../../img/home-page.svg" width="20px" height="30px" />Inicio</a>
+			</li>
+			<li ng-show="login.isRecep()" class="menu">
+				<a class="letra" href="#/recepcionista"><img class="casita" src="../../img/home-page.svg" width="20px" height="30px" /></i>Inicio</a>
+			</li>
+			<li ng-show="login.isRecep()" class="menu"><a class="letra">Citas<b class="caret"></b></a>
+				<ul class="sub-menu">
+					<li class="items"><a class="letra" href="#/citas/create">Agendar cita</a></li>
+					<li class="items"><a class="letra" href="#/agenda/list">Lista De Citas</a></li>
+				</ul>
+			</li>
+			<li ng-show="login.isRecep()" class="menu"><a class="letra" href="#/usuarios/list">Lista de paciente</a></li>
+			<li ng-show="login.isRecep()" class="menu"><a class="letra" href="#/agenda">Agenda</a></li>
+			<li ng-show="login.isRecep()" class="menu"><a class="letra" href="#/historias">Historias Clinicas</a></li>
+		</ul>
+		<ul class="seccion-iniciada" ng-show="login.isAuthenticated()">
+			<li class="menu">
+				<a href="" class="letra">{{login.getCurrentUser() | uppercase}}
+								<span class="caret">
+						</a>
+				<ul class="sub-menu">
+					<li class="seccion-cerrada">
+						<a class="cerrar" ng-click="login.logout()">Cerrar Sesión</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<form name="vmForm" ng-hide="login.isAuthenticated()" role="form" novalidate class="navbar-form navbar-right login">
+			<div class="form-group">
+				<input type="email" class="form-control" placeholder="Email" required ng-model="login.user.email" />
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" placeholder="Contraseña" required ng-model="login.user.password" />
+			</div>
+			<button type="submit" ng-disabled="vmForm.$invalid" ng-click="login.signIn()" class="btn btn-primary">Ingresar</button>
+		</form>
+	</nav>
+</div>
+<!--se borro la linea la clase formusuario-->
+<div class="form-group centrado usuarios-centrado">
+	<!--se borro el col-sm-5 y se le aplico el styl a form-group y al centrado-->
+	<div layout="column" ng-cloak>
+		<md-content layout-padding class="fondoformulario">
+			<h2 class="Titulo">CREAR USUARIOS</h2>
+			<form name="usuariosCreate" ng-controller="LoginCtrl as login">
+
+				<md-input-container class="md-block">
+					<label>Sede *</label>
+					<md-select required name="sede" ng-model="vm.usuario.sedesList">
+						<md-option ng-repeat="sede in vm.sedes" ng-value="sede">
+							{{sede.nombreSede}} - {{sede.idClinica.nombreClinica}}
+						</md-option>
+					</md-select>
+					<div ng-messages="usuariosCreate.sede.$error">
+						<div ng-message="required">Debes seleccionar una Sede</div>
+					</div>
+				</md-input-container>
+
+				<md-input-container class="md-block">
+						<label>Tipo De Usuario</label>
+						<md-select required name="tusuario" ng-model="vm.usuario.idTipoUsuario">
+								<md-option ng-repeat="tipo in vm.tipoUsuarios" ng-value="tipo">
+										{{tipo.tipoUsuario}}
+								</md-option>
+						</md-select>
+						<div ng-messages="usuariosCreate.tusuario.$error">
+							<div ng-message="required">Debes seleccionar un Tipo de usuario</div>
+						</div>
+				</md-input-container>
+
+				<md-input-container class="md-block" ng-if="vm.usuario.idTipoUsuario.idTipoUsuario == '01'">
+					<label>Tipo De Afiliado *</label>
+					<md-select ng-model="vm.usuario.codigo">
+						<md-option ng-repeat="afiliado in vm.afiliados" ng-value="afiliado">
+							{{afiliado.descripcion}}
+						</md-option>
+					</md-select>
+				</md-input-container>
+
+				<md-autocomplete md-input-name="eps" md-selected-item="vm.usuario.codigoEntidad" md-search-text="vm.searchTextAdministradoras" md-items="item in vm.queryAdministradoras(vm.searchTextAdministradoras)" md-item-text="item.descAdministradoras" md-min-length="1" md-floating-label="Entidad de Salud">
+					<md-item-template>
+						<span md-highlight-text="vm.searchTextAdministradoras">{{item.descAdministradoras}}</span>
+					</md-item-template>
+					<md-not-found>La EPS "{{vm.searchTextAdministradoras}}" no fue encontrada.</md-not-found>
+					<div ng-messages="usuariosCreate.eps.$error" ng-if="usuariosCreate.eps.$touched">
+						<div ng-message="required">Este campo es requerido.</div>
+					</div>
+				</md-autocomplete>
+
+				<md-input-container class="md-block">
+					<label>Tipo Documento *</label>
+					<md-select required name="documento" ng-model="vm.usuario.idTipoDocumento">
+						<md-option ng-repeat="tipodocumento in vm.tiposdocumentos" ng-value="tipodocumento">
+							{{tipodocumento.nombre}}
+						</md-option>
+					</md-select>
+					<div ng-messages="usuariosCreate.documento.$error">
+						<div ng-message="required">Debes seleccionar un Tipo de Documento</div>
+					</div>
+				</md-input-container>
+
+				<md-input-container class="md-block" ng-if="vm.usuario.idTipoDocumento.idTipoDocumento != 'MS'" ng-show="vm.usuario.idTipoDocumento.idTipoDocumento != 'AS'">
+					<label>Documento de Identidad</label>
+					<input md-maxlength="16" md-no-asterisk name="idIdentificacion" ng-pattern="/^[0-9]*$/" ng-model="vm.usuario.idIdentificacion">
+					<div ng-messages="usuariosCreate.idIdentificacion.$error">
+						<div ng-message="pattern">Solo Puedes Ingresar Numeros</div>
+						<div ng-message="md-maxlength">El numero del documento no puede superar 16 caracteres.</div>
+					</div>
+				</md-input-container>
+
+				<md-input-container class="md-block">
+					<label>Primer Nombre *</label>
+					<input md-maxlength="25" required name="PrimerNombre" ng-pattern="/^[A-Za-z ñÑáéíóúÁÉÍÓÚ\s]*$/" ng-model="vm.usuario.primerNombre">
+					<div ng-messages="usuariosCreate.PrimerNombre.$error">
+						<div ng-message="required">Este campo es requerido</div>
+						<div ng-message="pattern">Solo texto</div>
+						<div ng-message="md-maxlength">El nombre no puede pasar 25 caracteres</div>
+					</div>
+				</md-input-container>
+
+				<md-input-container class="md-block" ng-show="login.isRecep()">
+						<label>Segundo Nombre</label>
+						<input md-maxlength="25" name="SegundoNombre" ng-pattern="/^[A-Za-z ñÑáéíóúÁÉÍÓÚ\s]*$/" ng-model="vm.usuario.segundoNombre">
+						<div ng-messages="usuariosUpdate.SegundoNombre.$error">
+								<div ng-message="md-maxlength">El nombre no puede pasar 25 caracteres</div>
+								<div ng-message="pattern">Solo Texto</div>
+						</div>
+				</md-input-container>
+
+				<md-input-container class="md-block">
+					<label>Primer Apellido *</label>
+					<input md-maxlength="25" required md-no-asterisk name="PrimerApellido" ng-pattern="/^[A-Za-z ñÑáéíóúÁÉÍÓÚ\s]*$/" ng-model="vm.usuario.primerApellido">
+					<div ng-messages="usuariosCreate.PrimerApellido.$error">
+						<div ng-message="required">Este campo es requerido</div>
+						<div ng-message="pattern">Solo texto</div>
+						<div ng-message="md-maxlength">El apellido no puede pasar 25 caracteres</div>
+					</div>
+				</md-input-container>
+
+				<md-input-container class="md-block" ng-show="login.isRecep()">
+						<label>Segundo Apellido</label>
+						<input md-maxlength="25" name="SegundoApellido" ng-pattern="/^[A-Za-z ñÑáéíóúÁÉÍÓÚ\s]*$/" ng-model="vm.usuario.segundoApellido">
+						<div ng-messages="usuariosUpdate.SegundoApellido.$error">
+								<div ng-message="md-maxlength">El apellido no puede pasar 25 caracteres</div>
+								<div ng-message="pattern">Solo Texto</div>
+						</div>
+				</md-input-container>
+
+				<md-input-container class="md-block" ng-class="{'md-input-has-placeholder': vm.usuario.fechaNacimiento}">
+					<label>Fecha Nacimiento *</label>
+					<div class="dropdown">
+						<a class="dropdown-toggle my-toggle-select" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="">
+							<div class="input-group date">
+								<p>{{vm.usuario.fechaNacimiento| date: 'yyyy-MM-dd'}}</p>
+								<span class="input-group-addon"><i
+                class="fa fa-calendar"></i></span>
+							</div>
+						</a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+							<datetimepicker data-ng-model="vm.usuario.fechaNacimiento" data-datetimepicker-config="{ dropdownSelector: '.my-toggle-select', startView: 'year', minView: 'day' }">
+							</datetimepicker>
+						</ul>
+					</div>
+				</md-input-container>
+
+				<!--md-input-container class="md-block">
+						<label>Edad</label>
+						<input type="text" md-maxlength="3" md-no-asterisk name="edad" ng-pattern="/^[0-9]*$/" ng-model="vm.usuario.edad">
+						<div ng-messages="usuariosCreate.edad.$error">
+								<div ng-message="required">Este campo es requerido.</div>
+								<div ng-message="pattern">Solo Numeros</div>
+								<div ng-message="md-maxlength">La edad no puede superar 3 caracteres.</div>
+						</div>
+				</md-input-container-->
+
+				<md-input-container class="md-block" ng-show="login.isRecep()">
+						<label>Generos</label>
+						<md-select ng-model="vm.usuario.idGenero">
+								<md-option ng-repeat="genero in vm.generos" ng-value="genero">
+										{{genero.nombreGenero}}
+								</md-option>
+						</md-select>
+				</md-input-container>
+
+				<md-input-container class="md-block" ng-show="login.isRecep()">
+						<label>Escolaridad</label>
+						<md-select ng-model="vm.usuario.idEscolaridad">
+								<md-option ng-repeat="escolaridad in vm.escolaridades" ng-value="escolaridad">
+										{{escolaridad.tipoEscolaridad}}
+								</md-option>
+						</md-select>
+				</md-input-container>
+
+				<!--md-input-container class="md-block" ng-show="login.isRecep()">
+						<label>Antecedentes</label>
+						<md-select multiple ng-model="vm.usuario.antecedentesList">
+								<md-option ng-repeat="antecedente in vm.antecedentes" ng-value="antecedente">
+										{{antecedente.descripcionAntecedente}}
+								</md-option>
+						</md-select>
+				</md-input-container-->
+
+				<md-input-container class="md-block" ng-show="login.isRecep()">
+						<label>Tipo De Sangre</label>
+						<md-select ng-model="vm.usuario.idTipoSangre">
+								<md-option ng-repeat="sangre in vm.tipoSangre" ng-value="sangre">
+										{{sangre.nombreTipoSangre}}
+								</md-option>
+						</md-select>
+				</md-input-container>
+
+				<md-input-container class="md-block" ng-show="login.isRecep()">
+						<label>Estado Civil</label>
+						<md-select ng-model="vm.usuario.idEstadoCivil">
+								<md-option ng-repeat="estado in vm.estadocivil" ng-value="estado">
+										{{estado.tipoEstado}}
+								</md-option>
+						</md-select>
+				</md-input-container>
+
+				<md-input-container class="md-block">
+					<label>Email *</label>
+					<input type="email" md-maxlength="100" required name="email" ng-pattern="/^.+@.+\..+$/" ng-model="vm.usuario.email">
+					<div ng-messages="usuariosCreate.email.$error">
+						<div ng-message="required">Este campo es requerido.</div>
+						<div ng-message="pattern">Correo no valido ej: ejemplo@ejemplo.com</div>
+						<div ng-message="md-maxlength">El email no puede superar 100 caracteres.</div>
+					</div>
+				</md-input-container>
+
+				<md-input-container class="md-block">
+					<label>Contraseña *</label>
+					<input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w\S{7,}" required name="password" ng-model="vm.usuario.password">
+					<div ng-messages="usuariosCreate.password.$error">
+						<div ng-message="required">Este campo es requerido.</div>
+						<div ng-message="pattern">La contraseña debe tener al menos 8 caracteres, Una mayuscula y una minuscula.</div>
+					</div>
+				</md-input-container>
+
+				<md-autocomplete md-selected-item="vm.usuario.ciudades" md-search-text="vm.searchTextCiudades" md-items="item in vm.queryCiudades(vm.searchTextCiudades)" md-item-text="item.nombre + ' - ' + item.departamentos.nombre" md-min-length="1" md-floating-label="Ciudad de Domicilio"
+						md-input-name="ciudadDomicilio">
+						<md-item-template>
+								<span md-highlight-text="vm.searchTextCiudades" md-highlight-flags="^i">{{item.nombre}} - {{item.departamentos.nombre}}</span>
+						</md-item-template>
+						<md-not-found>La ciudad "{{vm.searchTextCiudades}}" no fue encontrada.</md-not-found>
+						<div ng-messages="usuariosCreate.ciudadDomicilio.$error" ng-if="usuariosCreate.ciudadDomicilio.$touched">
+								<div ng-message="required">Este campo es requerido.</div>
+						</div>
+				</md-autocomplete>
+
+				<md-input-container class="md-block">
+						<label>Dirección </label>
+						<input md-maxlength="100" md-no-asterisk name="direccion" ng-model="vm.usuario.direccion">
+						<div ng-messages="usuariosCreate.direccion.$error">
+								<div ng-message="required">Este campo es requerido.</div>
+								<div ng-message="md-maxlength">La dirección no puede superar 100 caracteres.</div>
+						</div>
+				</md-input-container>
+
+				<md-input-container class="md-block">
+						<label>Celular</label>
+						<input type="text" md-maxlength="16" md-no-asterisk name="telefono" ng-pattern="/^[0-9]*$/" ng-model="vm.usuario.telefono">
+						<div ng-messages="usuariosCreate.telefono.$error">
+								<div ng-message="required">Este campo es requerido.</div>
+								<div ng-message="pattern">Solo Numeros</div>
+								<div ng-message="md-maxlength">El teléfono no puede superar 16 caracteres.</div>
+						</div>
+				</md-input-container>
+
+				<md-input-container class="md-block" ng-show="login.isRecep()">
+						<label>Teléfono2</label>
+						<input type="text" md-maxlength="16" name="telefono2" ng-model="vm.usuario.telefono2" ng-pattern="/^[0-9]*$/">
+						<div ng-messages="usuariosUpdate.telefono2.$error">
+								<div ng-message="pattern">Solo Numeros</div>
+								<div ng-message="md-maxlength">El teléfono no puede superar 16 caracteres.</div>
+						</div>
+				</md-input-container>
+
+				<!--{{vm.usuario.idTipoDocumento.idTipoDocumento}}
+                  {{vm.usuario.idTipoDocumento.idTipoDocumento == "AS"}}-->
+				<section class="Botones">
+					<!--se borro todo lo  que tenia aqui y solo dejo una clase llamada Botones a la cual se le aplica styl-->
+					<md-button ng-click="vm.create()" class="guardarusuarios" ng-disabled="usuariosCreate.$invalid">Guardar</md-button>
+					<!--se le quitan algunas propiedades del styl-->
+					<md-button ng-href="#" class="cancelarusuarios">Cancelar</md-button>
+				</section>
+			</form>
+		</md-content>
+
+	</div>
+</div>
+<piepagina></piepagina>

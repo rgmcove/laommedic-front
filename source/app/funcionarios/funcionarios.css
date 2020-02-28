@@ -1,0 +1,46 @@
+.funcionarios {
+  background-color: #fff;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  font-family: fuente;
+  border: 1px solid #000;
+  text-align: justify;
+}
+.fondofunc {
+  border: 1px solid #0d47a1;
+  box-shadow: 2px 3px 30px rgba(0,0,0,0.5);
+  width: 100%;
+  padding: 10px;
+}
+.guardarfunc {
+  background-color: #0d47a1;
+  font-family: fuente;
+  color: #fff;
+}
+.guardarfunc:hover {
+  color: #23527c;
+}
+.cancelarfunc {
+  background-color: #b71c1c;
+  font-family: fuente;
+  color: #fff;
+}
+.actualizafunc {
+  background-color: #0d47a1;
+  font-family: fuente;
+  color: #fff;
+}
+.actualizafunc:hover {
+  color: #23527c;
+}
+@media screen and (max-width: 1920px) {
+  .funcionarios {
+    height: auto;
+  }
+}
+@media screen and (max-height: 1360px) {
+  .funcionarios {
+    margin-bottom: 19em;
+  }
+}

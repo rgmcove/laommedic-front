@@ -1,0 +1,150 @@
+.audita-citas {
+  background-color: #fff;
+  background-size: cover;
+  height: auto;
+  width: 100%;
+  font-family: fuente;
+  border: 1px solid #000;
+  text-align: justify;
+}
+.inicial {
+  color: #0d47a1;
+  font-size: fuente;
+  display: inline-block;
+  margin-left: 5%;
+  bottom: 1em;
+}
+.inicial1 {
+  color: #0d47a1;
+  font-size: fuente;
+  display: inline-block;
+  margin-left: 5%;
+  bottom: 1em;
+}
+.inicial2 {
+  color: #0d47a1;
+  font-size: fuente;
+  display: inline-block;
+  margin-left: 5%;
+}
+.lista-ul {
+  margin: 0;
+  padding: 0;
+}
+@media screen and (max-width: 463px) {
+  .inicial {
+    margin-left: 20%;
+  }
+  .inicial1 {
+    margin-left: 20%;
+  }
+  .inicial2 {
+    margin-left: 20%;
+  }
+}
+@media screen and (max-width: 467px) {
+  .inicial {
+    margin-left: 20%;
+  }
+  .inicial1 {
+    margin-left: 20%;
+  }
+  .inicial2 {
+    margin-left: 20%;
+  }
+}
+@media screen and (max-width: 490px) {
+  .inicial {
+    margin-left: 20%;
+  }
+  .inicial1 {
+    margin-left: 20%;
+  }
+  .inicial2 {
+    margin-left: 20%;
+  }
+}
+@media screen and (max-width: 607px) {
+  .inicial {
+    margin-left: 25%;
+  }
+  .inicial1 {
+    margin-left: 25%;
+  }
+  .inicial2 {
+    margin-left: 25%;
+  }
+}
+@media screen and (max-width: 656px) {
+  .inicial {
+    margin-left: 28%;
+  }
+  .inicial1 {
+    margin-left: 28%;
+  }
+  .inicial2 {
+    margin-left: 28%;
+  }
+}
+@media screen and (max-width: 681px) {
+  .inicial {
+    margin-left: 28%;
+  }
+  .inicial1 {
+    margin-left: 28%;
+  }
+  .inicial2 {
+    margin-left: 28%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .inicial {
+    margin-left: 28%;
+  }
+  .inicial1 {
+    margin-left: 28%;
+  }
+  .inicial2 {
+    margin-left: 28%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .inicial {
+    margin-left: 28%;
+  }
+  .inicial1 {
+    margin-left: 28%;
+  }
+  .inicial2 {
+    margin-left: 28%;
+  }
+}
+@media screen and (max-width: 1327px) {
+  .audita-citas {
+    height: auto;
+  }
+}
+@media screen and (max-width: 1920px) and (min-width: 1800px) {
+  .inicial {
+    margin-left: 15%;
+    position: relative;
+  }
+  .inicial1 {
+    margin-left: 15%;
+    position: relative;
+  }
+  .inicial2 {
+    margin-left: 15%;
+    position: relative;
+  }
+}
+@media screen and (max-height: 700px) {
+  .audita-citas {
+    margin-bottom: 13.6em;
+  }
+}
+@media screen and (min-height: 1000px) {
+  .audita-citas {
+    margin-bottom: 43.6em;
+  }
+}

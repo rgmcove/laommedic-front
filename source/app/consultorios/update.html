@@ -1,0 +1,224 @@
+<div class="mostrar1">
+    <div class="e1">
+        <a href="" class="desplegar-menu1">Menu <b class="caret"></b></a>
+    </div>
+
+    <nav class="lista" ng-controller="LoginCtrl as login">
+        <ul class="barra">
+            <li ng-show="login.isAdmin()" class="menu-an">
+                <a class="letra" href="#/admin"><img class="casita" src="../../img/home-page.svg" width="20px" height="30px" />Inicio</a>
+            </li>
+        </ul>
+        <li ng-show="login.isAdmin()" class="menu-an"><a class="letra">Clinicas <b class="caret"></b></a>
+            <ul class="sub-menu">
+                <li class="items"><a class="letra">Clinicas</a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/clinicas/list">Listar Clinicas</a></li>
+                        <li class="sub-item"><a class="letra" href="#/clinicas/create">Crear Clinicas</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Sedes</a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/sedes/list">Listar Sedes</a></li>
+                        <li class="sub-item"><a class="letra" href="#/sedes/create">Crear Sedes</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Consultorios</a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/consultorios/list">Listar Consultorios</a></li>
+                        <li class="sub-item"><a class="letra" href="#/consultorios/create">Crear Consultorios</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li ng-show="login.isAdmin()" class="menu-an"><a class="letra">Funcionarios <b class="caret"></b></a>
+            <ul class="sub-menu">
+                <li class="items"><a class="letra" href="#/funcionarios/list">Listar Funcionarios</a></li>
+                <li class="items"><a class="letra" href="#/funcionarios/create">Crear Funcionarios</a></li>
+                <li class="items"><a class="letra" href="#/usuarios/list">Listar Usuarios</a></li>
+            </ul>
+        </li>
+        <li ng-show="login.isAdmin()" class="menu-an"><a class="letra">Parametrizacion <b class="caret"></b></a>
+            <ul class="sub-menu">
+                <li class="items"><a class="letra">Personal tratante <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/pertratante/list">Listar personal tratante</a></li>
+                        <li class="sub-item"><a class="letra" href="#/pertratante/create">Crear personal tratante</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Personal Atiende <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/peratiende/list">Listar personal atiende</a></li>
+                        <li class="sub-item"><a class="letra" href="#/peratiende/create">Crear personal atiende</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Causas externas <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/cexternas/list">Listar causa externa</a></li>
+                        <li class="sub-item"><a class="letra" href="#/cexternas/create">Crear causa externa</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Antecedentes <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/antecedentes/list">Listar antecedentes</a></li>
+                        <li class="sub-item"><a class="letra" href="#/antecedentes/create">Crear antecedentes</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Ocupaciones <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/ocupaciones/list">Listar ocupaciones</a></li>
+                        <li class="sub-item"><a class="letra" href="#/ocupaciones/create">Crear ocupaciones</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Entidades <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/entidades/list">Listar entidades</a></li>
+                        <li class="sub-item"><a class="letra" href="#/entidades/create">Crear entidades</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Tipos antecedentes <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/tiantecedentes/list">Listar tipos antecedentes</a></li>
+                        <li class="sub-item"><a class="letra" href="#/tiantecedentes/create">Crear tipos antecedentes</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li ng-show="login.isAdmin()" class="menu-an"><a class="letra" href="#/historias">Historias Clinicas</a></li>
+
+        <li ng-show="login.isRoot()" class="menu-an">
+            <a class="letra" href="#/admin"><img class="casita" src="../../img/home-page.svg" width="20px" height="30px" />Inicio</a>
+        </li>
+        <li ng-show="login.isRoot()" class="menu-an"><a class="letra">Clinicas <b class="caret"></b></a>
+            <ul class="sub-menu">
+                <li class="items"><a class="letra">Clinicas</a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/clinicas/list">Listar Clinicas</a></li>
+                        <li class="sub-item"><a class="letra" href="#/clinicas/create">Crear Clinicas</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Sedes</a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/sedes/list">Listar Sedes</a></li>
+                        <li class="sub-item"><a class="letra" href="#/sedes/create">Crear Sedes</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Consultorios</a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/consultorios/list">Listar Consultorios</a></li>
+                        <li class="sub-item"><a class="letra" href="#/consultorios/create">Crear Consultorios</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li ng-show="login.isRoot()" class="menu-an"><a class="letra">Funcionarios <b class="caret"></b></a>
+            <ul class="sub-menu">
+                <li class="items"><a class="letra" href="#/funcionarios/list">Listar Funcionarios</a></li>
+                <li class="items"><a class="letra" href="#/funcionarios/create">Crear Funcionarios</a></li>
+                <li class="items"><a class="letra" href="#/usuarios/list">Listar Usuarios</a></li>
+            </ul>
+        </li>
+        <li ng-show="login.isRoot()" class="menu-an"><a class="letra">Parametrizacion <b class="caret"></b></a>
+            <ul class="sub-menu">
+                <li class="items"><a class="letra">Personal tratante <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/pertratante/list">Listar personal tratante</a></li>
+                        <li class="sub-item"><a class="letra" href="#/pertratante/create">Crear personal tratante</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Personal Atiende <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/peratiende/list">Listar personal atiende</a></li>
+                        <li class="sub-item"><a class="letra" href="#/peratiende/create">Crear personal atiende</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Causas externas <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/cexternas/list">Listar causa externa</a></li>
+                        <li class="sub-item"><a class="letra" href="#/cexternas/create">Crear causa externa</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Antecedentes <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/antecedentes/list">Listar antecedentes</a></li>
+                        <li class="sub-item"><a class="letra" href="#/antecedentes/create">Crear antecedentes</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Ocupaciones <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/ocupaciones/list">Listar ocupaciones</a></li>
+                        <li class="sub-item"><a class="letra" href="#/ocupaciones/create">Crear ocupaciones</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Entidades <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/entidades/list">Listar entidades</a></li>
+                        <li class="sub-item"><a class="letra" href="#/entidades/create">Crear entidades</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Tipos antecedentes <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/tiantecedentes/list">Listar tipos antecedentes</a></li>
+                        <li class="sub-item"><a class="letra" href="#/tiantecedentes/create">Crear tipos antecedentes</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li ng-show="login.isRoot()" class="menu-an"><a class="letra">Auditoria <b class="caret"></b></a>
+            <ul class="sub-menu">
+                <li class="items"><a class="letra" href="#/auditausuarios">Usuarios</a></li>
+                <li class="items"><a class="letra" href="#/auditacitas">Citas</a></li>
+            </ul>
+        </li>
+
+        <ul class="seccion-iniciada" ng-show="login.isAuthenticated()">
+            <li class="menu-an">
+                <a href="" class="letra">{{login.getCurrentUser() | uppercase}}
+              <span class="caret">
+          </a>
+                <ul class="sub-menu">
+                    <li class="seccion-cerrada">
+                        <a class="cerrar" ng-click="login.logout()">Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="form-group centrado">
+    <div layout="column" ng-cloak>
+        <md-content layout-padding class="fondoconsul">
+            <h2 class=Titulo>ACTUALIZAR COSULTORIOS</h2>
+            <form name="consultoriosUpdate">
+
+                <md-input-container class="md-block">
+                    <label>Nombre consultorio *</label>
+                    <input md-maxlength="100" required md-no-asterisk name="codigo" ng-model="vm.consultorio.codigoConsultorio" ng-pattern="/^[A-Za-z ñÑáéíóúÁÉÍÓÚ\s]*$/">
+                    <div ng-messages="consultoriosUpdate.codigo.$error">
+                      <div ng-message="pattern">Solo Texto</div>
+                        <div ng-message="required">Este campo es requerido.</div>
+                        <div ng-message="md-maxlength">El codigo del consultorio no puede superar 100 caracteres.</div>
+                    </div>
+                </md-input-container>
+
+                <md-autocomplete md-selected-item="vm.consultorio.idSede" md-search-text="vm.searchTextSedes" md-items="item in vm.querySedes(vm.searchTextSedes)" md-item-text="item.nombreSede" md-min-length="1" md-floating-label="Sede*" md-input-name="Sede" required>
+                    <md-item-template>
+                        <span md-highlight-text="vm.searchTextSedes" md-highlight-flags="^i">{{item.nombreSede}}</span>
+                    </md-item-template>
+                    <md-not-found>La Sede "{{vm.searchTextSedes}}" no fue encontrada.</md-not-found>
+                    <div ng-messages="consultoriosUpdate.Sede.$error" ng-if="consultoriosUpdate.Sede.$touched">
+                        <div ng-message="required">Este campo es requerido.</div>
+                    </div>
+                </md-autocomplete>
+
+
+                <section class="Botones">
+                    <md-button ng-click="vm.update()" class="guardarconsul">Actualizar</md-button>
+                    <md-button ng-href="#/consultorios/list" class="cancelarconsul">Cancelar</md-button>
+                </section>
+            </form>
+        </md-content>
+    </div>
+</div>
+<piepagina></piepagina>

@@ -1,0 +1,190 @@
+<div class="mostrar">
+	<div class="e">
+		<a href="" class="desplegar-menu">Menu <b class="caret"></b></a>
+	</div>
+
+	<nav class="header" ng-controller="LoginCtrl as login">
+		<ul class="barra">
+			<li ng-show="login.isFisio()" class="menu"><a class="letra" href="#/fisioterapeuta"><img class="casita" src="../../img/home-page.svg" width="20px" height="30px"/>Inicio</a></li>
+			<li ng-show="login.isRecep()" class="menu"><a class="letra" href="#/recepcionista"><img class="casita" src="../../img/home-page.svg" width="20px" height="30px"/>Inicio</a></li>
+			<li ng-show="login.isFisio()" class="menu"><a class="letra" href="#/usuarios/list">Consultar paciente</a></li>
+			<li ng-show="login.isFisio()" class="menu"><a class="letra" href="#/citas/list">Lista De Citas</a></li>
+			<li ng-show="login.isFisio()" class="menu"><a class="letra" href="#/agenda">Agenda</a></li>
+			<li ng-show="login.isFisio()" class="menu"><a class="letra" href="#/historias">Historias Clinicas</a></li>
+		</ul>
+		<ul class="seccion-iniciada" ng-show="login.isAuthenticated()">
+			<li class="menu">
+				<a href="" class="letra">{{login.getCurrentUser() | uppercase}}
+                <span class="caret">
+            </a>
+				<ul class="sub-menu">
+					<li class="seccion-cerrada">
+						<a class="cerrar" ng-click="login.logout()">Cerrar Sesión</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</div>
+<div class="form-group centrado citas-centrado">
+	<div layout="column" ng-cloak>
+		<md-content layout-padding class="fondocita">
+			<h2 class="Titulo">DATOS CITAS</h2>
+			<form name="citasCreate">
+
+				<div layout-gt-md="row" layout="column" layout-align-gt-md="center center">
+					<md-input-container required flex-gt-md="30">
+						<label>Fecha De Cita</label>
+						<input time="false" date="true" mdc-datetime-picker type="text" id="date" placeholder="Fecha Cita" ng-model="vm.cita.fechaCita" min-date="minDate" max-date="vm.dateMax" disabled="">
+					</md-input-container>
+					<div flex-gt-md="grow" flex-md="initial" ex-source-code target="input"></div>
+					<div ng-messages="citasCreate.date.$error">
+						<div ng-message="required">Este campo es requerido.</div>
+					</div>
+				</div>
+
+				<div layout-gt-md="row" layout="column" layout-align-gt-md="center center">
+					<md-input-container required flex-gt-md="30">
+						<input time="false" date="true" mdc-datetime-picker type="text" id="date" placeholder="Fecha Accidente" ng-model="vm.cita.fechaAccidente" min-date="minDate" max-date="vm.dateMax">
+					</md-input-container>
+					<div flex-gt-md="grow" flex-md="initial" ex-source-code target="input"></div>
+					<div ng-messages="citasCreate.date.$error">
+						<div ng-message="required">Este campo es requerido.</div>
+					</div>
+				</div>
+
+				<div layout-gt-md="row" layout="column" layout-align-gt-md="center center">
+					<md-input-container required flex-gt-md="30">
+						<input time="false" date="true" mdc-datetime-picker type="text" id="date" placeholder="Fecha Cirugia" ng-model="vm.cita.fechaCirugia" min-date="minDate" max-date="vm.dateMax">
+					</md-input-container>
+					<div flex-gt-md="grow" flex-md="initial" ex-source-code target="input"></div>
+					<div ng-messages="citasCreate.date.$error">
+						<div ng-message="required">Este campo es requerido.</div>
+					</div>
+				</div>
+
+				<md-input-container class="md-block">
+					<label>Causa Externa</label>
+					<md-select required name="causa" ng-model="vm.cita.idCausa">
+						<md-option ng-repeat="causa in vm.causas" ng-value="causa">
+							{{causa.descCausa}}
+						</md-option>
+					</md-select>
+					<div ng-messages="citasCreate.causa.$error">
+						<div ng-message="required">Debes seleccionar una Causa</div>
+					</div>
+				</md-input-container>
+
+				<md-input-container class="md-block">
+					<label>Fuerza Muscular</label>
+					<md-select required name="fuerza" ng-model="vm.cita.idFuerza">
+						<md-option ng-repeat="fuerza in vm.fuerzas" ng-value="fuerza">
+							{{fuerza.nombreFuerza}}
+						</md-option>
+					</md-select>
+					<div ng-messages="citasCreate.causa.$error">
+						<div ng-message="required">Debes seleccionar una Fuerza Muscular</div>
+					</div>
+				</md-input-container>
+
+				<md-input-container class="md-block">
+					<label>Finalidad Del Procedimiento</label>
+					<md-select required name="finalidades" ng-model="vm.cita.idFinalidadProcedimiento">
+						<md-option ng-repeat="finalidad in vm.finalidadesProcedimientos" ng-value="finalidad">
+							{{finalidad.finalidadProcedimiento}}
+						</md-option>
+					</md-select>
+					<div ng-messages="citasCreate.finalidades.$error">
+						<div ng-message="required">Debes seleccionar una Finalidad</div>
+					</div>
+				</md-input-container>
+
+				<md-autocomplete md-selected-item="vm.cita.idCup" md-search-text="vm.searchTextCups" md-items="item in vm.queryCups(vm.searchTextCups)" md-item-text="item.subcategoria + ' - ' + item.descripcion" md-min-length="1" md-floating-label="Cups" md-input-name="cups">
+					<md-item-template>
+						<span md-highlight-text="vm.searchTextCups" md-highlight-flags="^i">{{item.subcategoria}} - {{item.descripcion}}</span>
+					</md-item-template>
+					<md-not-found>La Cup "{{vm.searchTextCups}}" no fue encontrada.</md-not-found>
+					<div ng-messages="citasCreate.cups.$error" ng-if="citasCreate.cups.$touched">
+						<div ng-message="required">Este campo es requerido.</div>
+					</div>
+				</md-autocomplete>
+
+				<md-input-container class="md-block">
+					<label>Descripcion Del Accidente</label>
+					<input md-maxlength="255" name="descripcion" required ng-model="vm.cita.descripcionAccidente">
+					<div ng-messages="citasCreate.descripcion.$error">
+						<div ng-message="md-maxlength">Este campo no puede pasar 255 caracteres</div>
+						<div ng-message="required">Este campo es requerido.</div>
+					</div>
+				</md-input-container>
+
+				<md-checkbox ng-model="vm.cita.edema" aria-label="Checkbox 1" class="md-primary" ng-true-value="'si'" ng-false-value="'no'">
+					Edemas:
+				</md-checkbox>
+
+				<md-input-container class="md-block">
+					<label>Observaciones</label>
+					<input md-maxlength="255" name="observacion" required ng-model="vm.cita.observaciones">
+					<div ng-messages="citasCreate.observacion.$error">
+						<div ng-message="md-maxlength">Este campo no puede pasar 255 caracteres</div>
+						<div ng-message="required">Este campo es requerido.</div>
+					</div>
+				</md-input-container>
+
+				<md-input-container class="md-block">
+					<label>Plan De Tratamiento</label>
+					<input md-maxlength="255" name="plan" required ng-model="vm.cita.planTratamiento">
+					<div ng-messages="citasCreate.plan.$error">
+						<div ng-message="md-maxlength">Este campo no puede pasar 255 caracteres</div>
+						<div ng-message="required">Este campo es requerido.</div>
+					</div>
+				</md-input-container>
+
+				<md-autocomplete md-selected-item="vm.cita.idDiagnosticos" md-search-text="vm.searchTextDiagnosticos" md-items="item in vm.queryDiagnosticos(vm.searchTextDiagnosticos)" md-item-text="item.codigoCuatro + ' - ' + item.descripcionCuatro" md-min-length="1" md-floating-label="Diagnosticos" md-input-name="diagnosticos">
+					<md-item-template>
+						<span md-highlight-text="vm.searchTextDiagnosticos" md-highlight-flags="^i">{{item.codigoCuatro}} - {{item.descripcionCuatro}}</span>
+					</md-item-template>
+					<md-not-found>El Diagnostico "{{vm.searchTextDiagnosticos}}" no fue encontrado.</md-not-found>
+					<div ng-messages="citasCreate.diagnosticos.$error" ng-if="citasCreate.diagnosticos.$touched">
+						<div ng-message="required">Este campo es requerido.</div>
+					</div>
+				</md-autocomplete>
+
+				<md-input-container class="md-block">
+					<label>Diagnostico Del Fisioterapeuta</label>
+					<input md-maxlength="255" name="fisioterapeuta" required ng-model="vm.cita.diagnosticoFisioterapeutico">
+					<div ng-messages="citasCreate.fisioterapeuta.$error">
+						<div ng-message="md-maxlength">Este campo no puede pasar 255 caracteres</div>
+						<div ng-message="required">Este campo es requerido.</div>
+					</div>
+				</md-input-container>
+
+				<md-input-container class="md-block">
+						<label>Codigo Factura</label>
+						<input type="text" md-maxlength="16" md-no-asterisk name="codifac" ng-pattern="/^[0-9]*$/" ng-model="vm.cita.codigoFactura">
+						<div ng-messages="citasCreate.codifac.$error">
+								<div ng-message="required">Este campo es requerido.</div>
+								<div ng-message="pattern">Solo Numeros</div>
+								<div ng-message="md-maxlength">El codigo no puede superar 16 caracteres.</div>
+						</div>
+				</md-input-container>
+
+				<md-input-container class="md-block">
+						<label>Valor Factura</label>
+						<input type="text" md-maxlength="16" md-no-asterisk name="codigo" ng-pattern="/^[0-9]*$/" ng-model="vm.cita.valorFactura">
+						<div ng-messages="citasCreate.codigo.$error">
+								<div ng-message="required">Este campo es requerido.</div>
+								<div ng-message="pattern">Solo Numeros</div>
+								<div ng-message="md-maxlength">El Valor no puede superar 16 caracteres.</div>
+						</div>
+				</md-input-container>
+
+				<section class="Botones">
+					<md-button ng-click="vm.update()" class="guardarcita">Guardar</md-button>
+					<md-button ng-href="#/citas/list" class="cancelarcita">Cancelar</md-button>
+				</section>
+			</form>
+		</md-content>
+	</div>
+</div>
+<piepagina></piepagina>

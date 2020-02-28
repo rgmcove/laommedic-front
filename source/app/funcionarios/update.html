@@ -1,0 +1,400 @@
+<div class="mostrar1">
+    <div class="e1">
+        <a href="" class="desplegar-menu1">Menu <b class="caret"></b></a>
+    </div>
+    <nav class="lista" ng-controller="LoginCtrl as login">
+        <ul class="barra">
+            <li ng-show="login.isAdmin()" class="menu-an">
+                <a class="letra" href="#/admin"><img class="casita" src="../../img/home-page.svg" width="20px" height="30px" />Inicio</a>
+            </li>
+        </ul>
+        <li ng-show="login.isAdmin()" class="menu-an"><a class="letra">Clinicas <b class="caret"></b></a>
+            <ul class="sub-menu">
+                <li class="items"><a class="letra">Clinicas</a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/clinicas/list">Listar Clinicas</a></li>
+                        <li class="sub-item"><a class="letra" href="#/clinicas/create">Crear Clinicas</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Sedes</a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/sedes/list">Listar Sedes</a></li>
+                        <li class="sub-item"><a class="letra" href="#/sedes/create">Crear Sedes</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Consultorios</a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/consultorios/list">Listar Consultorios</a></li>
+                        <li class="sub-item"><a class="letra" href="#/consultorios/create">Crear Consultorios</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li ng-show="login.isAdmin()" class="menu-an"><a class="letra">Funcionarios <b class="caret"></b></a>
+            <ul class="sub-menu">
+                <li class="items"><a class="letra" href="#/funcionarios/list">Listar Funcionarios</a></li>
+                <li class="items"><a class="letra" href="#/funcionarios/create">Crear Funcionarios</a></li>
+                <li class="items"><a class="letra" href="#/usuarios/list">Listar Usuarios</a></li>
+            </ul>
+        </li>
+        <li ng-show="login.isAdmin()" class="menu-an"><a class="letra">Parametrizacion <b class="caret"></b></a>
+            <ul class="sub-menu">
+                <li class="items"><a class="letra">Personal tratante <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/pertratante/list">Listar personal tratante</a></li>
+                        <li class="sub-item"><a class="letra" href="#/pertratante/create">Crear personal tratante</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Personal Atiende <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/peratiende/list">Listar personal atiende</a></li>
+                        <li class="sub-item"><a class="letra" href="#/peratiende/create">Crear personal atiende</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Causas externas <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/cexternas/list">Listar causa externa</a></li>
+                        <li class="sub-item"><a class="letra" href="#/cexternas/create">Crear causa externa</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Antecedentes <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/antecedentes/list">Listar antecedentes</a></li>
+                        <li class="sub-item"><a class="letra" href="#/antecedentes/create">Crear antecedentes</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Ocupaciones <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/ocupaciones/list">Listar ocupaciones</a></li>
+                        <li class="sub-item"><a class="letra" href="#/ocupaciones/create">Crear ocupaciones</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Entidades <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/entidades/list">Listar entidades</a></li>
+                        <li class="sub-item"><a class="letra" href="#/entidades/create">Crear entidades</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Tipos antecedentes <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/tiantecedentes/list">Listar tipos antecedentes</a></li>
+                        <li class="sub-item"><a class="letra" href="#/tiantecedentes/create">Crear tipos antecedentes</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li ng-show="login.isAdmin()" class="menu-an"><a class="letra" href="#/historias">Historias Clinicas</a></li>
+
+        <li ng-show="login.isRoot()" class="menu-an">
+            <a class="letra" href="#/admin"><img class="casita" src="../../img/home-page.svg" width="20px" height="30px" />Inicio</a>
+        </li>
+        <li ng-show="login.isRoot()" class="menu-an"><a class="letra">Clinicas <b class="caret"></b></a>
+            <ul class="sub-menu">
+                <li class="items"><a class="letra">Clinicas</a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/clinicas/list">Listar Clinicas</a></li>
+                        <li class="sub-item"><a class="letra" href="#/clinicas/create">Crear Clinicas</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Sedes</a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/sedes/list">Listar Sedes</a></li>
+                        <li class="sub-item"><a class="letra" href="#/sedes/create">Crear Sedes</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Consultorios</a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/consultorios/list">Listar Consultorios</a></li>
+                        <li class="sub-item"><a class="letra" href="#/consultorios/create">Crear Consultorios</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li ng-show="login.isRoot()" class="menu-an"><a class="letra">Funcionarios <b class="caret"></b></a>
+            <ul class="sub-menu">
+                <li class="items"><a class="letra" href="#/funcionarios/list">Listar Funcionarios</a></li>
+                <li class="items"><a class="letra" href="#/funcionarios/create">Crear Funcionarios</a></li>
+                <li class="items"><a class="letra" href="#/usuarios/list">Listar Usuarios</a></li>
+            </ul>
+        </li>
+        <li ng-show="login.isRoot()" class="menu-an"><a class="letra">Parametrizacion <b class="caret"></b></a>
+            <ul class="sub-menu">
+                <li class="items"><a class="letra">Personal tratante <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/pertratante/list">Listar personal tratante</a></li>
+                        <li class="sub-item"><a class="letra" href="#/pertratante/create">Crear personal tratante</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Personal Atiende <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/peratiende/list">Listar personal atiende</a></li>
+                        <li class="sub-item"><a class="letra" href="#/peratiende/create">Crear personal atiende</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Causas externas <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/cexternas/list">Listar causa externa</a></li>
+                        <li class="sub-item"><a class="letra" href="#/cexternas/create">Crear causa externa</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Antecedentes <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/antecedentes/list">Listar antecedentes</a></li>
+                        <li class="sub-item"><a class="letra" href="#/antecedentes/create">Crear antecedentes</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Ocupaciones <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/ocupaciones/list">Listar ocupaciones</a></li>
+                        <li class="sub-item"><a class="letra" href="#/ocupaciones/create">Crear ocupaciones</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Entidades <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/entidades/list">Listar entidades</a></li>
+                        <li class="sub-item"><a class="letra" href="#/entidades/create">Crear entidades</a></li>
+                    </ul>
+                </li>
+                <li class="items"><a class="letra">Tipos antecedentes <b class="caret"></b></a>
+                    <ul class="sub-menuItems">
+                        <li class="sub-item"><a class="letra" href="#/tiantecedentes/list">Listar tipos antecedentes</a></li>
+                        <li class="sub-item"><a class="letra" href="#/tiantecedentes/create">Crear tipos antecedentes</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li ng-show="login.isRoot()" class="menu-an"><a class="letra">Auditoria <b class="caret"></b></a>
+            <ul class="sub-menu">
+                <li class="items"><a class="letra" href="#/auditausuarios">Usuarios</a></li>
+                <li class="items"><a class="letra" href="#/auditacitas">Citas</a></li>
+            </ul>
+        </li>
+
+        <ul class="seccion-iniciada" ng-show="login.isAuthenticated()">
+            <li class="menu-an">
+                <a href="" class="letra">{{login.getCurrentUser() | uppercase}}
+              <span class="caret"></a>
+                <ul class="sub-menu">
+                    <li class="seccion-cerrada">
+                        <a class="cerrar" ng-click="login.logout()">Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="form-group centrado">
+    <div layout="column" ng-cloak>
+        <md-content layout-padding class="fondofunc">
+            <h2 class="Titulo">ACTUALIZAR FUNCIONARIOS</h2>
+            <form name="funcionariosUpdate">
+
+                <md-input-container class="md-block">
+                    <label>Sede</label>
+                    <md-select ng-model="vm.funcionario.sedesList">
+                        <md-option ng-repeat="sede in vm.sedes" ng-value="sede">
+                            {{sede.nombreSede}} - {{sede.idClinica.nombreClinica}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Roles</label>
+                    <md-select ng-model="vm.funcionario.rolesList">
+                        <md-option ng-repeat="rol in vm.roles" ng-value="rol">
+                            {{rol.nombreRol | uppercase}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Tipo Documento</label>
+                    <md-select ng-model="vm.funcionario.idTipoDocumento">
+                        <md-option ng-repeat="tipodocumento in vm.tiposdocumentos" ng-value="tipodocumento">
+                            {{tipodocumento.nombre}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Documento de Identidad *</label>
+                    <input md-maxlength="16" required md-no-asterisk name="Identificacion" ng-model="vm.funcionario.idIdentificacion">
+                    <div ng-messages="funcionariosUpdate.Identificacion.$error">
+                        <div ng-message="required">Este campo es requerido.</div>
+                        <div ng-message="md-maxlength">El numero del documento no puede superar 16 caracteres.</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Primer Nombre *</label>
+                    <input md-maxlength="25" required name="PrimerNombre" ng-pattern="/^[A-Za-z ñÑáéíóúÁÉÍÓÚ\s]*$/" ng-model="vm.funcionario.primerNombre">
+                    <div ng-messages="funcionariosUpdate.PrimerNombre.$error">
+                        <div ng-message="required">Este campo es requerido</div>
+                        <div ng-message="pattern">Solo Texto</div>
+                        <div ng-message="md-maxlength">El nombre no puede pasar 25 caracteres</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Segundo Nombre</label>
+                    <input md-maxlength="25" name="SegundoNombre" ng-pattern="/^[A-Za-z ñÑáéíóúÁÉÍÓÚ\s]*$/" ng-model="vm.funcionario.segundoNombre">
+                    <div ng-messages="funcionariosUpdate.SegundoNombre.$error">
+                        <div ng-message="md-maxlength">El nombre no puede pasar 25 caracteres</div>
+                        <div ng-message="pattern">Solo Texto</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Primer Apellido *</label>
+                    <input md-maxlength="25" required md-no-asterisk name="PrimerApellido" ng-pattern="/^[A-Za-z ñÑáéíóúÁÉÍÓÚ\s]*$/" ng-model="vm.funcionario.primerApellido">
+                    <div ng-messages="funcionariosUpdate.PrimerApellido.$error">
+                        <div ng-message="required">Este campo es requerido</div>
+                        <div ng-message="pattern">Solo Texto</div>
+                        <div ng-message="md-maxlength">El apellido no puede pasar 25 caracteres</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Segundo Apellido</label>
+                    <input md-maxlength="25" name="SegundoApellido" ng-pattern="/^[A-Za-z ñÑáéíóúÁÉÍÓÚ\s]*$/" ng-model="vm.funcionario.segundoApellido">
+                    <div ng-messages="funcionariosUpdate.SegundoApellido.$error">
+                        <div ng-message="md-maxlength">El apellido no puede pasar 25 caracteres</div>
+                        <div ng-message="pattern">Solo Texto</div>
+                    </div>
+                </md-input-container>
+
+                <div layout-gt-md="row" layout="column"  layout-align-gt-md="center center">
+                    <md-input-container required flex-gt-md="30">
+                        <input time="false" date="true" mdc-datetime-picker ng-disabled="true" type="text" id="date" placeholder="Fecha Nacimiento" ng-model="vm.funcionario.fechaNacimiento" min-date="minDate" max-date="vm.dateMax">
+                    </md-input-container>
+                    <div flex-gt-md="grow" flex-md="initial" ex-source-code target="input"></div>
+                    <div ng-messages="funcionariosUpdate.date.$error">
+                        <div ng-message="required">Este campo es requerido.</div>
+                    </div>
+                </div>
+
+                <!--md-input-container class="md-block">
+                    <label>Edad</label>
+                    <input type="text" md-maxlength="3" md-no-asterisk name="edad" ng-pattern="/^[0-9]*$/" ng-model="vm.funcionario.edad">
+                    <div ng-messages="funcionariosUpdate.edad.$error">
+                        <div ng-message="required">Este campo es requerido.</div>
+                        <div ng-message="pattern">Solo Numeros</div>
+                        <div ng-message="md-maxlength">La edad no puede superar 3 caracteres.</div>
+                    </div>
+                </md-input-container-->
+
+                <md-input-container class="md-block">
+                    <label>Generos</label>
+                    <md-select ng-model="vm.funcionario.idGenero">
+                        <md-option ng-repeat="genero in vm.generos" ng-value="genero">
+                            {{genero.nombreGenero}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Tipo De Sangre</label>
+                    <md-select ng-model="vm.funcionario.idTipoSangre">
+                        <md-option ng-repeat="sangre in vm.tipoSangre" ng-value="sangre">
+                            {{sangre.nombreTipoSangre}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Estado Civil</label>
+                    <md-select ng-model="vm.funcionario.idEstadoCivil">
+                        <md-option ng-repeat="estado in vm.estadocivil" ng-value="estado">
+                            {{estado.tipoEstado}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Escolaridad</label>
+                    <md-select ng-model="vm.funcionario.idEscolaridad">
+                        <md-option ng-repeat="escolaridad in vm.escolaridades" ng-value="escolaridad">
+                            {{escolaridad.tipoEscolaridad}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Email *</label>
+                    <input type="email" md-maxlength="100" required name="email" ng-pattern="/^.+@.+\..+$/" ng-model="vm.funcionario.email">
+                    <div ng-messages="funcionariosUpdate.email.$error">
+                        <div ng-message="required">Este campo es requerido.</div>
+                        <div ng-message="pattern">Correo no valido ej: ejemplo@ejemplo.com</div>
+                        <div ng-message="md-maxlength">El email no puede superar 100 caracteres.</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Email 2</label>
+                    <input type="email" md-maxlength="100" name="email2" ng-model="vm.funcionario.email2" ng-pattern="/^.+@.+\..+$/">
+                    <div ng-messages="funcionariosUpdate.email2.$error">
+                        <div ng-message="pattern">Correo no valido ej: ejemplo@ejemplo.com</div>
+                        <div ng-message="md-maxlength">El email no puede superar 100 caracteres.</div>
+                    </div>
+                </md-input-container>
+
+                <md-autocomplete md-selected-item="vm.funcionario.ciudades" md-search-text="vm.searchTextCiudades" md-items="item in vm.queryCiudades(vm.searchTextCiudades)" md-item-text="item.nombre + ' - ' + item.departamentos.nombre" md-min-length="1" md-floating-label="Ciudad de Domicilio"
+                    md-input-name="ciudadDomicilio">
+                    <md-item-template>
+                        <span md-highlight-text="vm.searchTextCiudades" md-highlight-flags="^i">{{item.nombre}} - {{item.departamentos.nombre}}</span>
+                    </md-item-template>
+                    <md-not-found>La ciudad "{{vm.searchTextCiudades}}" no fue encontrada.</md-not-found>
+                    <div ng-messages="funcionariosUpdate.ciudadDomicilio.$error" ng-if="funcionariosUpdate.ciudadDomicilio.$touched">
+                        <div ng-message="required">Este campo es requerido.</div>
+                    </div>
+                </md-autocomplete>
+
+                <md-input-container class="md-block">
+                    <label>Dirección </label>
+                    <input md-maxlength="100" md-no-asterisk name="direccion" ng-model="vm.funcionario.direccion">
+                    <div ng-messages="funcionariosUpdate.direccion.$error">
+                        <div ng-message="required">Este campo es requerido.</div>
+                        <div ng-message="md-maxlength">La dirección no puede superar 100 caracteres.</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Celular</label>
+                    <input type="texr" md-maxlength="16" md-no-asterisk name="telefono" ng-pattern="/^[0-9]*$/" ng-model="vm.funcionario.telefono">
+                    <div ng-messages="funcionariosUpdate.telefono.$error">
+                        <div ng-message="required">Este campo es requerido.</div>
+                        <div ng-message="pattern">Solo Numeros</div>
+                        <div ng-message="md-maxlength">El teléfono no puede superar 16 caracteres.</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Teléfono Fijo</label>
+                    <input type="text" md-maxlength="16" name="telefono2" ng-model="vm.funcionario.telefono2" ng-pattern="/^[0-9]*$/">
+                    <div ng-messages="funcionariosUpdate.telefono2.$error">
+                        <div ng-message="pattern">Solo Numeros</div>
+                        <div ng-message="md-maxlength">El teléfono no puede superar 16 caracteres.</div>
+                    </div>
+                </md-input-container>
+
+                <!--div layout-gt-md="row" layout="column" layout-align-gt-md="center center">
+                    <md-input-container required flex-gt-md="30">
+                        <label>Fecha De Ingreso</label>
+                        <input time="false" date="true" mdc-datetime-picker type="text" id="date" placeholder="Fecha Ingreso" ng-model="vm.funcionario.fechaIngreso" max-date="vm.dateMax1">
+                    </md-input-container>
+                    <div flex-gt-md="grow" flex-md="initial" ex-source-code target="input"></div>
+                    <div ng-messages="funcionariosUpdate.date.$error">
+                        <div ng-message="required">Este campo es requerido.</div>
+                    </div>
+                </div-->
+
+                <section class="Botones">
+                    <md-button ng-click="vm.update()" class="actualizafunc">Actualizar</md-button>
+                    <md-button ng-href="#/funcionarios/list" class="cancelarfunc">Cancelar</md-button>
+                </section>
+            </form>
+        </md-content>
+    </div>
+</div>
+<piepagina></piepagina>

@@ -1,0 +1,60 @@
+<div class="mostrar1">
+<div class="e1">
+	<a href="" class="desplegar-menu1">Menu <b class="caret"></b></a>
+</div>
+
+<nav class="lista" ng-controller="LoginCtrl as login">
+  <ul class="lista-ul">
+    <li ng-show="login.isAdmin()" class="menu-an"><a class="letra" href="#/admin"><img class="casita" src="../../img/home-page.svg" width="20px" height="30px"/>Inicio</a></li>
+		<li ng-show="login.isFisio()" class="menu-an"><a class="letra" href="#/fisioterapeuta"><img class="casita" src="../../img/home-page.svg" width="20px" height="30px"/>Inicio</a></li>
+		<li ng-show="login.isFisio()" class="menu-an"><a class="letra" href="#/agenda">Agenda</a></li>
+		<li ng-show="login.isFisio()" class="menu-an"><a class="letra" href="#/usuarios/list">Consultar Paciente</a></li>
+		<li ng-show="login.isFisio()" class="menu-an"><a class="letra" href="#/historias">Historias Clinicas</a></li>
+		<input class="buscar" type="text" ng-model="vm.search" placeholder="Buscar Paciente">
+
+		<ul class="seccion-iniciada" ng-show="login.isAuthenticated()">
+			<li class="menu-an">
+				<a href="" class="letra">{{login.getCurrentUser() | uppercase}}
+								<span class="caret">
+						</a>
+				<ul class="sub-menu">
+					<li class="seccion-cerrada">
+						<a class="cerrar" ng-click="login.logout()">Cerrar Sesión</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+  </ul>
+</nav>
+</div>
+<div class="Citas">
+
+    <h2 class="Titulo">LISTA CITAS</h2>
+    <md-table-container>
+
+        <table class="table-bordered table-hover" md-table md-row-select multiple ng-model="vm.selected" md-progress="vm.promise">
+            <thead md-head md-order="vm.query.order" md-on-reorder="vm.getCitas">
+                <tr md-row>
+                  <th class="campos"><span>Fecha Cita</span></th>
+                  <th class="campos"><span>Paciente</span></th>
+									<th class="campos"><span>idIdentificacion</span></th>
+									<th class="campos">Introducir Datos</th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row md-select="vm.citas"
+                    md-select-id="cita"
+                    md-auto-select ng-repeat="cita in vm.citasList | filter: vm.fecha | filter: vm.search | limitTo: vm.query.limit: (vm.query.page - 1) * vm.query.limit | orderBy: 'fechaCita'">
+                  <td class="info">{{cita.fechaCita | date: 'yyyy-MM-dd HH:mm'}}</td>
+                  <td class="info">{{cita.idUsuario.primerNombre}} {{cita.idUsuario.segundoNombre}} {{cita.idUsuario.primerApellido}} {{cita.idUsuario.segundoApellido}}</td>
+									<td class="info">{{cita.idUsuario.idIdentificacion}}</td>
+              		  <td class="info"><a href="#/citas/{{cita.idCita}}"><img class="casita" src="../../img/pencil.svg" width="20px" height="30px"/></a></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </md-table-container>
+
+    <md-table-pagination class="paginacion" md-limit="vm.query.limit" md-limit-options="[5, 10, 20, 50]" md-page="vm.query.page" md-label="{page: 'Página:', rowsPerPage: 'Filas por página:', of: 'de'}" md-total="{{vm.citasList.length}}"></md-table-pagination>
+</div>
+<piepagina></piepagina>

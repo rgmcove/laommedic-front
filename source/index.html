@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Laom Medic</title>
+
+    <!-- build:css css/style.min.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="lib/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="lib/ng-table/dist/ng-table.min.css" />
+    <link rel="stylesheet" href="lib/angular-material-data-table/dist/md-data-table.css" />
+    <link rel="stylesheet" href="lib/fullcalendar/dist/fullcalendar.css" />
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="lib/angular-material-datetimepicker/css/material-datetimepicker.min.css" />
+    <link rel="stylesheet" href="lib/angular-bootstrap-datetimepicker/src/css/datetimepicker.css" />
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/app/admin/admin.css">
+    <link rel="stylesheet" href="/app/antecedentes/antecedentes.css">
+    <link rel="stylesheet" href="/app/audita_citas/auditacitas.css">
+    <link rel="stylesheet" href="/app/audita_usuario/auditausuarios.css">
+    <link rel="stylesheet" href="/app/cexternas/cexternas.css">
+    <link rel="stylesheet" href="/app/citas/agenda.css">
+    <link rel="stylesheet" href="/app/citas/citas.css">
+    <link rel="stylesheet" href="/app/clinicas/clinicas.css">
+    <link rel="stylesheet" href="/app/consultorios/consultorios.css">
+    <link rel="stylesheet" href="/app/entidades/entidades.css">
+    <link rel="stylesheet" href="/app/fisioterapeuta/fisioterapeuta.css">
+    <link rel="stylesheet" href="/app/footer/footer.css">
+    <link rel="stylesheet" href="/app/funcionarios/funcionarios.css">
+    <link rel="stylesheet" href="/app/header/animate.css">
+    <link rel="stylesheet" href="/app/header/header.css">
+    <link rel="stylesheet" href="/app/inicio/inicio.css">
+    <link rel="stylesheet" href="/app/ocupaciones/ocupaciones.css">
+    <link rel="stylesheet" href="/app/paciente/paciente.css">
+    <link rel="stylesheet" href="/app/peratiende/peratiende.css">
+    <link rel="stylesheet" href="/app/pertratante/pertratante.css">
+    <link rel="stylesheet" href="/app/recepcionista/recep.css">
+    <link rel="stylesheet" href="/app/sedes/sedes.css">
+    <link rel="stylesheet" href="/app/tiantecedentes/tiantecedentes.css">
+    <link rel="stylesheet" href="/app/usuarios/usuarios.css">
+    <link rel="stylesheet" href="/app/password/password-recovery/estilos.css">
+    <link rel="stylesheet" href="/app/password/password-confirm/estilos.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+
+<body>
+
+
+    <!-- El encabezado es el header, solo que no se puede colocar header, porque html,
+    ya tiene una etiqueta con ese nombre -->
+
+
+    <!-- Inicio contenido Página -->
+    <div ui-view=''></div>
+
+    <!-- Fin contenido Página -->
+
+    <!-- El piepagina es el footer, solo que no se puede colocar footer, porque html,
+    ya tiene una etiqueta con ese nombre -->
+
+
+
+    <!-- build:js js/vendor.min.js -->
+    <!-- bower:js -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="lib/angular-filter/dist/angular-filter.min.js"></script>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/angular-animate/angular-animate.js"></script>
+    <script src="lib/angular-aria/angular-aria.js"></script>
+    <script src="lib/angular-messages/angular-messages.js"></script>
+    <script src="lib/angular-material/angular-material.js"></script>
+    <script src="lib/satellizer/satellizer.js"></script>
+    <script src="lib/ng-table/dist/ng-table.min.js"></script>
+    <script src="lib/angular-material-data-table/dist/md-data-table.js"></script>
+    <script src="lib/jquery-ui/jquery-ui.js"></script>
+    <script src="lib/momentjs/moment.js"></script>
+    <script src="lib/fullcalendar/dist/fullcalendar.js"></script>
+    <script src="lib/angular-ui-calendar/src/calendar.js"></script>
+    <script src="lib/angular-material-datetimepicker/js/angular-material-datetimepicker.min.js"></script>
+    <script src="lib/angular-touch/angular-touch.js"></script>
+    <script src="lib/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+    <script src="lib/angular-bootstrap-datetimepicker/src/js/datetimepicker.templates.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js js/app.min.js -->
+    <!-- inject:js -->
+    <script src="/app/app.module.js"></script>
+    <script src="/app/templates.js"></script>
+    <script src="/app/admin/app.controller.js"></script>
+    <script src="/app/admin/app.directivas.js"></script>
+    <script src="/app/admin/app.module.js"></script>
+    <script src="/app/admin/app.route.js"></script>
+    <script src="/app/admin/app.services.js"></script>
+    <script src="/app/antecedentes/app.controller.js"></script>
+    <script src="/app/antecedentes/app.directivas.js"></script>
+    <script src="/app/antecedentes/app.module.js"></script>
+    <script src="/app/antecedentes/app.router.js"></script>
+    <script src="/app/antecedentes/app.services.js"></script>
+    <script src="/app/audita_citas/app.controller.js"></script>
+    <script src="/app/audita_citas/app.directivas.js"></script>
+    <script src="/app/audita_citas/app.module.js"></script>
+    <script src="/app/audita_citas/app.router.js"></script>
+    <script src="/app/audita_citas/app.services.js"></script>
+    <script src="/app/audita_usuario/app.controller.js"></script>
+    <script src="/app/audita_usuario/app.directivas.js"></script>
+    <script src="/app/audita_usuario/app.module.js"></script>
+    <script src="/app/audita_usuario/app.router.js"></script>
+    <script src="/app/audita_usuario/app.services.js"></script>
+    <script src="/app/cexternas/app.controller.js"></script>
+    <script src="/app/cexternas/app.directivas.js"></script>
+    <script src="/app/cexternas/app.module.js"></script>
+    <script src="/app/cexternas/app.router.js"></script>
+    <script src="/app/cexternas/app.services.js"></script>
+    <script src="/app/citas/app.controller.js"></script>
+    <script src="/app/citas/app.directivas.js"></script>
+    <script src="/app/citas/app.module.js"></script>
+    <script src="/app/citas/app.router.js"></script>
+    <script src="/app/citas/app.services.js"></script>
+    <script src="/app/config/app.constantes.js"></script>
+    <script src="/app/clinicas/app.controller.js"></script>
+    <script src="/app/clinicas/app.directivas.js"></script>
+    <script src="/app/clinicas/app.module.js"></script>
+    <script src="/app/clinicas/app.router.js"></script>
+    <script src="/app/clinicas/app.services.js"></script>
+    <script src="/app/consultorios/app.controller.js"></script>
+    <script src="/app/consultorios/app.directivas.js"></script>
+    <script src="/app/consultorios/app.module.js"></script>
+    <script src="/app/consultorios/app.router.js"></script>
+    <script src="/app/consultorios/app.services.js"></script>
+    <script src="/app/entidades/app.controller.js"></script>
+    <script src="/app/entidades/app.directivas.js"></script>
+    <script src="/app/entidades/app.module.js"></script>
+    <script src="/app/entidades/app.router.js"></script>
+    <script src="/app/entidades/app.services.js"></script>
+    <script src="/app/fisioterapeuta/app.directivas.js"></script>
+    <script src="/app/fisioterapeuta/app.module.js"></script>
+    <script src="/app/fisioterapeuta/app.route.js"></script>
+    <script src="/app/footer/app.directivas.js"></script>
+    <script src="/app/footer/app.module.js"></script>
+    <script src="/app/footer/app.route.js"></script>
+    <script src="/app/funcionarios/app.controller.js"></script>
+    <script src="/app/funcionarios/app.directivas.js"></script>
+    <script src="/app/funcionarios/app.module.js"></script>
+    <script src="/app/funcionarios/app.router.js"></script>
+    <script src="/app/funcionarios/app.services.js"></script>
+    <script src="/app/header/app.directivas.js"></script>
+    <script src="/app/header/app.module.js"></script>
+    <script src="/app/inicio/app.controller.js"></script>
+    <script src="/app/inicio/app.directivas.js"></script>
+    <script src="/app/inicio/app.module.js"></script>
+    <script src="/app/inicio/app.route.js"></script>
+    <script src="/app/login/app.controller.js"></script>
+    <script src="/app/login/app.module.js"></script>
+    <script src="/app/ocupaciones/app.controller.js"></script>
+    <script src="/app/ocupaciones/app.directivas.js"></script>
+    <script src="/app/ocupaciones/app.module.js"></script>
+    <script src="/app/ocupaciones/app.router.js"></script>
+    <script src="/app/ocupaciones/app.services.js"></script>
+    <script src="/app/paciente/app.directivas.js"></script>
+    <script src="/app/paciente/app.module.js"></script>
+    <script src="/app/paciente/app.router.js"></script>
+    <script src="/app/peratiende/app.controller.js"></script>
+    <script src="/app/peratiende/app.directivas.js"></script>
+    <script src="/app/peratiende/app.module.js"></script>
+    <script src="/app/peratiende/app.router.js"></script>
+    <script src="/app/peratiende/app.services.js"></script>
+    <script src="/app/pertratante/app.controller.js"></script>
+    <script src="/app/pertratante/app.directivas.js"></script>
+    <script src="/app/pertratante/app.module.js"></script>
+    <script src="/app/pertratante/app.router.js"></script>
+    <script src="/app/pertratante/app.services.js"></script>
+    <script src="/app/recepcionista/app.directivas.js"></script>
+    <script src="/app/recepcionista/app.module.js"></script>
+    <script src="/app/recepcionista/app.router.js"></script>
+    <script src="/app/sedes/app.controller.js"></script>
+    <script src="/app/sedes/app.directivas.js"></script>
+    <script src="/app/sedes/app.module.js"></script>
+    <script src="/app/sedes/app.router.js"></script>
+    <script src="/app/sedes/app.services.js"></script>
+    <script src="/app/tiantecedentes/app.controller.js"></script>
+    <script src="/app/tiantecedentes/app.directivas.js"></script>
+    <script src="/app/tiantecedentes/app.module.js"></script>
+    <script src="/app/tiantecedentes/app.router.js"></script>
+    <script src="/app/tiantecedentes/app.services.js"></script>
+    <script src="/app/usuarios/app.controller.js"></script>
+    <script src="/app/usuarios/app.directivas.js"></script>
+    <script src="/app/usuarios/app.module.js"></script>
+    <script src="/app/usuarios/app.router.js"></script>
+    <script src="/app/usuarios/app.services.js"></script>
+    <script src="/app/password/password-recovery/app.controller.js"></script>
+    <script src="/app/password/password-recovery/app.directive.js"></script>
+    <script src="/app/password/password-recovery/app.module.js"></script>
+    <script src="/app/password/password-recovery/app.router.js"></script>
+    <script src="/app/password/password-recovery/app.services.js"></script>
+    <script src="/app/password/password-confirm/app.controller.js"></script>
+    <script src="/app/password/password-confirm/app.directive.js"></script>
+    <script src="/app/password/password-confirm/app.module.js"></script>
+    <script src="/app/password/password-confirm/app.router.js"></script>
+    <script src="/app/password/password-confirm/app.services.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+.passrecovery {
+  background-color: #166ba2;
+  height: 28em;
+  padding-top: 3.6em;
+}
+.passrecovery-logo {
+  text-align: center;
+  padding-top: 1em;
+}
+.passrecovery-logoImg {
+  width: 100%;
+  border: solid 4px #f9f9f9;
+  border-radius: 50%;
+  height: 15em;
+  width: 15em;
+}
+.passrecovery-icons {
+  display: inline-block;
+}
+.passrecoveryForm {
+  text-align: center;
+  padding-top: 7em;
+  padding-bottom: 5em;
+}
+.passrecoveryForm-form {
+  max-width: 35em;
+  display: inline-block;
+  padding: 3em;
+  border-radius: 0.5em;
+  border: 1px solid #0d47a1;
+  margin-bottom: 78px;
+  border: 1px solid #0d47a1;
+  box-shadow: 2px 3px 30px rgba(0,0,0,0.5);
+}
+.passrecoveryForm-title {
+  margin-bottom: 1em;
+}
+.passrecoveryForm-title {
+  color: #0d47a1;
+  font-family: fuente;
+}
+/**.passrecovery-containerIcon
+  display inline-block **/
+@media (max-width: 516px) {
+  .passrecoveryForm {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+@media screen and (max-width: 1001px) {
+  .passrecovery-content {
+    text-align: center;
+  }
+  .passrecovery-icons {
+    max-width: 55px;
+    margin-right: 0.5em;
+    display: inline-block;
+  }
+  .passrecovery-containerIcon {
+    text-align: center;
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 1366px) {
+  .passrecoveryForm {
+    height: 35.9em;
+  }
+}

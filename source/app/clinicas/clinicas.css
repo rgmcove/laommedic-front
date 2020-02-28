@@ -1,0 +1,56 @@
+.clinicas {
+  background-color: #fff;
+  background-size: cover;
+  height: auto;
+  width: 100%;
+  font-family: fuente;
+  border: 1px solid #000;
+  text-align: justify;
+}
+.fondoclini {
+  border: 1px solid #0d47a1;
+  box-shadow: 2px 3px 30px rgba(0,0,0,0.5);
+  width: 100%;
+  padding: 10px;
+}
+.guardarclini {
+  background-color: #0d47a1;
+  font-family: fuente;
+  color: #fff;
+}
+.guardarclini:hover {
+  color: #23527c;
+}
+.cancelarclini {
+  background-color: #b71c1c;
+  font-family: fuente;
+  color: #fff;
+}
+.actualizarclini {
+  background-color: #0d47a1;
+  font-family: fuente;
+  color: #fff;
+}
+.actualizarclini:hover {
+  color: #23527c;
+}
+@media screen and (max-width: 1366px) {
+  .clinicas {
+    height: auto;
+  }
+}
+@media screen and (max-width: 1920px) {
+  .fondoclini {
+    margin-top: 10%;
+    margin-bottom: 4.5em;
+  }
+  .clinicas {
+    height: auto;
+    margin-bottom: 45em;
+  }
+}
+@media screen and (max-height: 900px) {
+  .clinicas {
+    margin-bottom: 19em;
+  }
+}

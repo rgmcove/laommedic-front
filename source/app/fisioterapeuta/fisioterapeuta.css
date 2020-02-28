@@ -1,0 +1,243 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url("../../fonts/fonts/icomoon.eot?djvnsd");
+  src: url("../../fonts/fonts/icomoon.eot?djvnsd#iefix") format('embedded-opentype'), url("../../fonts/fonts/icomoon.ttf?djvnsd") format('truetype'), url("../../fonts/fonts/icomoon.woff?djvnsd") format('woff'), url("../../fonts/fonts/icomoon.svg?djvnsd#icomoon") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+/* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+/* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.nav-item {
+  background: #000;
+  opacity: 0.5;
+  text-align: center;
+}
+.item {
+  display: inline-block;
+  padding: 1em 3em;
+  border-radius: 5px;
+  margin: 0;
+  border-right: 2px solid #fff;
+}
+.item-link {
+  color: #fff;
+}
+.item:hover {
+  background: #0ff;
+}
+.Content-user {
+  display: inline-block;
+}
+.General {
+  height: 36.2em;
+}
+.icon-fisio {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.iconfisio1,
+.iconfisio2,
+.iconfisio3 {
+  margin-left: 8%;
+  margin-top: 11%;
+  margin-right: 5%;
+}
+.NavLista-user,
+.NavItem-user,
+.Nav-user {
+  display: block;
+}
+.Nav-user {
+  margin-top: 4em;
+}
+.NavLista-user {
+  padding: 0;
+  margin: 0;
+}
+.NavItem-user {
+  background: #000;
+  text-align: center;
+  border-radius: 6px;
+  opacity: 0.5;
+  padding: 2px;
+}
+.Content-user {
+  margin-top: 100px;
+  margin: 5%;
+}
+.NavLink-user {
+  text-decoration: none;
+  color: #fff;
+  font-family: cursive;
+  font-size: 13px;
+}
+.Welcome {
+  font-family: cursive;
+  color: #f83a3a;
+  position: relative;
+  top: -4em;
+  left: 10em;
+  display: inline-block;
+}
+.Footer-fisio {
+  text-align: center;
+  margin-top: 6em;
+}
+.img-modulos,
+.icon-modulos {
+  display: inline-block;
+}
+.img-modulos {
+  position: relative;
+  left: 20%;
+}
+.icon-modulos {
+  font-size: 50px;
+  text-align: center;
+}
+@media screen and (max-width: 1920px) and (min-width: 1800px) {
+  .General {
+    height: 65.4em;
+  }
+  .icon-fisio {
+    top: 15em;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+  }
+  .iconfisio1 .iconfisio2,
+  .iconfisio1 .iconfisio3 {
+    margin-left: 8%;
+    margin-right: 5%;
+    position: relative;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Content-user {
+    margin-left: 30%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .Content-user {
+    margin-left: 25%;
+  }
+  .container1 {
+    display: none;
+  }
+}
+@media screen and (max-width: 980px) {
+  .images-modulos {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  .Welcome {
+    display: none;
+  }
+}
+@media screen and (max-width: 720px) {
+  .Content-user {
+    margin-left: 40%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .iconfisio1 {
+    margin-left: 30%;
+  }
+  .iconfisio2 {
+    margin-left: 30%;
+  }
+  .iconfisio3 {
+    margin-left: 30%;
+  }
+  .General {
+    height: 50%;
+  }
+}
+@media screen and (max-width: 399px) {
+  .iconfisio1 {
+    margin-left: 25%;
+  }
+  .iconfisio2 {
+    display: none;
+  }
+  .iconfisio3 {
+    display: none;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .iconfisio1 {
+    margin-left: 10%;
+    margin-top: 100px;
+  }
+  .iconfisio2 {
+    display: none;
+  }
+  .iconfisio3 {
+    display: none;
+  }
+  .General {
+    height: 50%;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .General {
+    height: 36.5em;
+  }
+  .iconfisio2 {
+    display: none;
+  }
+  .iconfisio3 {
+    display: none;
+  }
+  .icon-fisio {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 1300px) and (min-height: 620px) {
+  .General {
+    height: 36.2em;
+  }
+}

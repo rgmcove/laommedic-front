@@ -1,0 +1,130 @@
+.usuarios {
+  background-color: #fff;
+  background-size: cover;
+  height: auto;
+  width: 100%;
+  font-family: fuente;
+  border: 1px solid #000;
+  text-align: justify;
+}
+.Botones {
+  display: flex;
+  justify-content: space-between;
+  width: 18em;
+  margin: auto;
+}
+.fondoformulario {
+  border: 1px solid #0d47a1;
+  box-shadow: 2px 3px 30px rgba(0,0,0,0.5);
+  width: 100%;
+  padding: 10px;
+}
+.centrado {
+  margin: auto !important;
+  bottom: 0 !important;
+  float: none;
+  padding: 2em 0;
+}
+.form-group {
+  max-width: 45em;
+}
+@media screen and (max-width: 900px) {
+  .form-group {
+    max-width: 70%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .form-group {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .form-group {
+    max-width: 90%;
+  }
+}
+.guardarusuarios {
+  background-color: #0d47a1;
+  color: #fff;
+}
+.guardarusuarios:hover {
+  color: #081465;
+}
+.cancelarusuarios {
+  background-color: #b71c1c;
+  font-family: fuente;
+  color: #fff;
+}
+.actualizausuarios {
+  background-color: #0d47a1;
+  font-family: fuente;
+  color: #fff;
+}
+.actualizausuarios:hover {
+  color: #697ff1;
+}
+.e1-u {
+  margin: auto;
+  width: 100%;
+  background-color: #0d47a1;
+  display: none;
+}
+.desplegar-menu1-u {
+  background-color: #0d47a1;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 12px;
+  display: block;
+  font-size: 18px;
+}
+.desplegar-menu1-u:hover {
+  color: #fff;
+  background-color: #1b9bff;
+}
+.lista-u {
+  background-color: #0d47a1;
+}
+.menu-u {
+  padding-top: 5px;
+  display: inline-block;
+  list-style: none;
+}
+.menu-u:hover > .sub-menu {
+  display: block;
+  -moz-transition: all 1s ease 0.2s;
+  -webkit-transition: all 1s ease 0.2s;
+  -o-transition: all 1s ease 0.2s;
+  transition: all 1s ease 0.2s;
+}
+@media screen and (max-width: 1174px) {
+  .e1-u {
+    display: block;
+  }
+  .menu-u {
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    width: 100%;
+  }
+  .lista-u {
+    display: none;
+  }
+  .mostrar1-u:hover > .lista-u {
+    display: block;
+  }
+}
+@media screen and (max-width: 1920px) and (min-width: 1800px) {
+  .usuarios {
+    position: relative;
+    margin-bottom: 31.3em;
+  }
+}
+@media screen and (max-height: 700px) {
+  .usuarios {
+    margin-bottom: 19em;
+  }
+  .usuarios-centrado {
+    height: 95em;
+  }
+  .usuariosRecep-centrado {
+    height: 125em;
+  }
+}

@@ -1,0 +1,49 @@
+.sedes {
+  background-color: #fff;
+  background-size: cover;
+  height: auto;
+  width: 100%;
+  font-family: fuente;
+  border: 1px solid #000;
+  text-align: justify;
+}
+.fondosedes {
+  border: 1px solid #0d47a1;
+  box-shadow: 2px 3px 30px rgba(0,0,0,0.5);
+  width: 100%;
+  padding: 10px;
+}
+.guardarsede {
+  background-color: #0d47a1;
+  font-family: fuente;
+  color: #fff;
+}
+.guardarsede:hover {
+  color: #23527c;
+}
+.cancelarsede {
+  background-color: #b71c1c;
+  font-family: fuente;
+  color: #fff;
+}
+@media screen and (max-width: 1920px) {
+  .fondosedes {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+  .sedes {
+    height: auto;
+    position: relative;
+    margin-bottom: 35em;
+  }
+}
+@media screen and (max-height: 1360px) {
+  .sedes {
+    margin-bottom: 19em;
+  }
+}
+@media screen and (max-height: 1080px) {
+  .sedes {
+    margin-bottom: 34.4em;
+  }
+}

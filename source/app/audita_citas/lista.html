@@ -1,0 +1,261 @@
+<div class="mostrar1">
+	<div class="e1">
+		<a href="" class="desplegar-menu1">Menu <b class="caret"></b></a>
+	</div>
+
+	<nav class="lista" ng-controller="LoginCtrl as login">
+		<ul class="barra">
+		<li ng-show="login.isRoot()" class="menu-an">
+			<a class="letra" href="#/admin"><img class="casita" src="../../img/home-page.svg" width="20px" height="30px" />Inicio</a>
+		</li>
+		<li ng-show="login.isRoot()" class="menu-an"><a class="letra">Clinicas <b class="caret"></b></a>
+			<ul class="sub-menu">
+				<li class="items"><a class="letra">Clinicas</a>
+					<ul class="sub-menuItems">
+						<li class="sub-item"><a class="letra" href="#/clinicas/list">Listar Clinicas</a></li>
+						<li class="sub-item"><a class="letra" href="#/clinicas/create">Crear Clinicas</a></li>
+					</ul>
+				</li>
+				<li class="items"><a class="letra">Sedes</a>
+					<ul class="sub-menuItems">
+						<li class="sub-item"><a class="letra" href="#/sedes/list">Listar Sedes</a></li>
+						<li class="sub-item"><a class="letra" href="#/sedes/create">Crear Sedes</a></li>
+					</ul>
+				</li>
+				<li class="items"><a class="letra">Consultorios</a>
+					<ul class="sub-menuItems">
+						<li class="sub-item"><a class="letra" href="#/consultorios/list">Listar Consultorios</a></li>
+						<li class="sub-item"><a class="letra" href="#/consultorios/create">Crear Consultorios</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li ng-show="login.isRoot()" class="menu-an"><a class="letra">Funcionarios <b class="caret"></b></a>
+			<ul class="sub-menu">
+				<li class="items"><a class="letra" href="#/funcionarios/list">Listar Funcionarios</a></li>
+				<li class="items"><a class="letra" href="#/funcionarios/create">Crear Funcionarios</a></li>
+				<li class="items"><a class="letra" href="#/usuarios/list">Listar Usuarios</a></li>
+			</ul>
+		</li>
+		<li ng-show="login.isRoot()" class="menu-an"><a class="letra">Parametrizacion <b class="caret"></b></a>
+			<ul class="sub-menu">
+				<li class="items"><a class="letra">Personal tratante <b class="caret"></b></a>
+					<ul class="sub-menuItems">
+						<li class="sub-item"><a class="letra" href="#/pertratante/list">Listar personal tratante</a></li>
+						<li class="sub-item"><a class="letra" href="#/pertratante/create">Crear personal tratante</a></li>
+					</ul>
+				</li>
+				<li class="items"><a class="letra">Personal Atiende <b class="caret"></b></a>
+					<ul class="sub-menuItems">
+						<li class="sub-item"><a class="letra" href="#/peratiende/list">Listar personal atiende</a></li>
+						<li class="sub-item"><a class="letra" href="#/peratiende/create">Crear personal atiende</a></li>
+					</ul>
+				</li>
+				<li class="items"><a class="letra">Causas externas <b class="caret"></b></a>
+					<ul class="sub-menuItems">
+						<li class="sub-item"><a class="letra" href="#/cexternas/list">Listar causa externa</a></li>
+						<li class="sub-item"><a class="letra" href="#/cexternas/create">Crear causa externa</a></li>
+					</ul>
+				</li>
+				<li class="items"><a class="letra">Antecedentes <b class="caret"></b></a>
+					<ul class="sub-menuItems">
+						<li class="sub-item"><a class="letra" href="#/antecedentes/list">Listar antecedentes</a></li>
+						<li class="sub-item"><a class="letra" href="#/antecedentes/create">Crear antecedentes</a></li>
+					</ul>
+				</li>
+				<li class="items"><a class="letra">Ocupaciones <b class="caret"></b></a>
+					<ul class="sub-menuItems">
+						<li class="sub-item"><a class="letra" href="#/ocupaciones/list">Listar ocupaciones</a></li>
+						<li class="sub-item"><a class="letra" href="#/ocupaciones/create">Crear ocupaciones</a></li>
+					</ul>
+				</li>
+				<li class="items"><a class="letra">Entidades <b class="caret"></b></a>
+					<ul class="sub-menuItems">
+						<li class="sub-item"><a class="letra" href="#/entidades/list">Listar entidades</a></li>
+						<li class="sub-item"><a class="letra" href="#/entidades/create">Crear entidades</a></li>
+					</ul>
+				</li>
+				<li class="items"><a class="letra">Tipos antecedentes <b class="caret"></b></a>
+					<ul class="sub-menuItems">
+						<li class="sub-item"><a class="letra" href="#/tiantecedentes/list">Listar tipos antecedentes</a></li>
+						<li class="sub-item"><a class="letra" href="#/tiantecedentes/create">Crear tipos antecedentes</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li ng-show="login.isRoot()" class="menu-an"><a class="letra">Auditoria <b class="caret"></b></a>
+			<ul class="sub-menu">
+				<li class="items"><a class="letra" href="#/auditausuarios">Usuarios</a></li>
+				<li class="items"><a class="letra" href="#/auditacitas">Citas</a></li>
+			</ul>
+		</li>
+
+		<input class="buscar" type="text" ng-model="vm.search" placeholder="Buscar Cita">
+
+		<ul class="seccion-iniciada" ng-show="login.isAuthenticated()">
+			<li class="menu-an">
+				<a href="" class="letra">{{login.getCurrentUser() | uppercase}}
+	                <span class="caret">
+	            </a>
+				<ul class="sub-menu">
+					<li class="seccion-cerrada">
+						<a class="cerrar" ng-click="login.logout()">Cerrar Sesión</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+	</nav>
+</div>
+<div class="audita-citas">
+
+	<h2 class="Titulo">LISTA AUDITORIA CITAS</h2>
+	<md-table-container>
+
+		<table class="table-bordered table-hover tabla" md-table md-row-select multiple ng-model="vm.selected" md-progress="vm.promise">
+			<thead md-head md-order="vm.query.order" md-on-reorder="vm.getAuditaCitas">
+				<tr md-row>
+					<th class="campos-usu"><span>Codigo</span></th>
+					<th class="campos-usu"><span>Usuario</span></th>
+					<th class="campos-usu"><span>Fecha Cita Anterior</span></th>
+					<th class="campos-usu"><span>Fecha Accidente Anterior</span></th>
+					<th class="campos-usu"><span>Descripcion Accidente Anterior</span></th>
+					<th class="campos-usu"><span>Fecha Cirugia Anterior</span></th>
+					<th class="campos-usu"><span>Edema Anterior</span></th>
+					<th class="campos-usu"><span>Dolor Localización Anterior</span></th>
+					<th class="campos-usu"><span>Tipo Dolor Anterior</span></th>
+					<th class="campos-usu"><span>Frecuencia Dolor Anterior</span></th>
+					<th class="campos-usu"><span>Calificación Dolor Anterior</span></th>
+					<th class="campos-usu"><span>Movilidad Articular Anterior</span></th>
+					<th class="campos-usu"><span>Flexibilidad Anterior</span></th>
+					<th class="campos-usu"><span>Trofismo Anterior</span></th>
+					<th class="campos-usu"><span>Tegumentario Anterior</span></th>
+					<th class="campos-usu"><span>Sensibilidad Anterior</span></th>
+					<th class="campos-usu"><span>Postura Anterior</span></th>
+					<th class="campos-usu"><span>Plan Tratamiento Anterior</span></th>
+					<th class="campos-usu"><span>Diagnostico Fisioterapeutico</span></th>
+					<th class="campos-usu"><span>Marcha Anterior</span></th>
+					<th class="campos-usu"><span>Observaciones Anterior</span></th>
+					<th class="campos-usu"><span>Codigo Factura Anterior</span></th>
+					<th class="campos-usu"><span>Valor Factura Anterior</span></th>
+					<th class="campos-usu"><span>Valor Cita Anterior</span></th>
+					<th class="campos-usu"><span>Fuerza Anterior</span></th>
+					<th class="campos-usu"><span>Personal Anterior</span></th>
+					<th class="campos-usu"><span>Causa Anterior</span></th>
+					<th class="campos-usu"><span>Finalidad Consulta Anterior</span></th>
+					<th class="campos-usu"><span>Tipo diagnostico Anterior</span></th>
+					<th class="campos-usu"><span>Finalidad Procedimiento Anterior</span></th>
+					<th class="campos-usu"><span>Ambito Procedimiento Anterior</span></th>
+					<th class="campos-usu"><span>Cup Anterior</span></th>
+					<th class="campos-usu"><span>Usuario Anterior</span></th>
+					<th class="campos-usu"><span>Diagnostico Anterior</span></th>
+					<th class="campos-usu"><span>Fecha Cita Reciente</span></th>
+					<th class="campos-usu"><span>Fecha Accidente Reciente</span></th>
+					<th class="campos-usu"><span>Descripcion Accidente Reciente</span></th>
+					<th class="campos-usu"><span>Fecha Cirugia Reciente</span></th>
+					<th class="campos-usu"><span>Edema Reciente</span></th>
+					<th class="campos-usu"><span>Dolor Localización Reciente</span></th>
+					<th class="campos-usu"><span>Tipo Dolor Reciente</span></th>
+					<th class="campos-usu"><span>Frecuencia Dolor Reciente</span></th>
+					<th class="campos-usu"><span>Calificación Dolor Reciente</span></th>
+					<th class="campos-usu"><span>Movilidad Articular Reciente</span></th>
+					<th class="campos-usu"><span>Flexibilidad Reciente</span></th>
+					<th class="campos-usu"><span>Trofismo Reciente</span></th>
+					<th class="campos-usu"><span>Tegumentario Reciente</span></th>
+					<th class="campos-usu"><span>Sensibilidad Reciente</span></th>
+					<th class="campos-usu"><span>Postura Reciente</span></th>
+					<th class="campos-usu"><span>Plan Tratamiento Reciente</span></th>
+					<th class="campos-usu"><span>Diagnostico Fisioterapeutico</span></th>
+					<th class="campos-usu"><span>Marcha Reciente</span></th>
+					<th class="campos-usu"><span>Observaciones Reciente</span></th>
+					<th class="campos-usu"><span>Codigo Factura Reciente</span></th>
+					<th class="campos-usu"><span>Valor Factura Reciente</span></th>
+					<th class="campos-usu"><span>Valor Cita Reciente</span></th>
+					<th class="campos-usu"><span>Fuerza Reciente</span></th>
+					<th class="campos-usu"><span>Personal Reciente</span></th>
+					<th class="campos-usu"><span>Causa Reciente</span></th>
+					<th class="campos-usu"><span>Finalidad Consulta Reciente</span></th>
+					<th class="campos-usu"><span>Tipo diagnostico Reciente</span></th>
+					<th class="campos-usu"><span>Finalidad Procedimiento Reciente</span></th>
+					<th class="campos-usu"><span>Ambito Procedimiento Reciente</span></th>
+					<th class="campos-usu"><span>Cup Reciente</span></th>
+					<th class="campos-usu"><span>Usuario Reciente</span></th>
+					<th class="campos-usu"><span>Diagnostico Reciente</span></th>
+					<th class="campos-usu"><span>Fecha Modificacion</span></th>
+			</thead>
+			<tbody md-body>
+				<tr md-row md-select="vm.auditacitas" md-select-id="auditacitas" md-auto-select ng-repeat="auditacita in vm.auditacitasList | filter: vm.search | limitTo: vm.query.limit: (vm.query.page - 1) * vm.query.limit">
+					<td class="info">{{auditacita.codigoAudita}}</td>
+					<td class="info">{{auditacita.usuario}}</td>
+					<td class="info">{{auditacita.fechaCitaOld | date: 'yyyy-MM-dd'}}</td>
+					<td class="info">{{auditacita.fechaAccidenteOld | date: 'yyyy-MM-dd'}}</td>
+					<td class="info">{{auditacita.descripcionAccidenteOld}}</td>
+					<td class="info">{{auditacita.fechaCirugiaOld | date: 'yyyy-MM-dd'}}</td>
+					<td class="info">{{auditacita.edemaOld}}</td>
+					<td class="info">{{auditacita.dolorLocaclizacionOld}}</td>
+					<td class="info">{{auditacita.tipoDolorOld}}</td>
+					<td class="info">{{auditacita.frecuenciaDolorOld}}</td>
+					<td class="info">{{auditacita.calificacionDolorOld}}</td>
+					<td class="info">{{auditacita.movilidadArticularOld}}</td>
+					<td class="info">{{auditacita.flexibilidadOld}}</td>
+					<td class="info">{{auditacita.trofismoOld}}</td>
+					<td class="info">{{auditacita.tegumentacionOld}}</td>
+					<td class="info">{{auditacita.sensibilidadOld}}</td>
+					<td class="info">{{auditacita.posturaOld}}</td>
+					<td class="info">{{auditacita.planTratamientoOld}}</td>
+					<td class="info">{{auditacita.diagnosticoFisioterapeuticoOld}}</td>
+					<td class="info">{{auditacita.marchaOld}}</td>
+					<td class="info">{{auditacita.observacionesOld}}</td>
+					<td class="info">{{auditacita.codigoFacturaOld}}</td>
+					<td class="info">{{auditacita.valorFacturaOld}}</td>
+					<td class="info">{{auditacita.valorCitaOld}}</td>
+					<td class="info">{{auditacita.idFuerzaOld}}</td>
+					<td class="info">{{auditacita.idPersonalOld}}</td>
+					<td class="info">{{auditacita.idCausaOld}}</td>
+					<td class="info">{{auditacita.idFinalidadConsultaOld}}</td>
+					<td class="info">{{auditacita.idTipoDiagnosticoOld}}</td>
+					<td class="info">{{auditacita.idFinalidadprocedimientoOld}}</td>
+					<td class="info">{{auditacita.idAmbitoProcedimientoOld}}</td>
+					<td class="info">{{auditacita.idCupOld}}</td>
+					<td class="info">{{auditacita.idUsuarioOld}}</td>
+					<td class="info">{{auditacita.idDiagnosticosOld}}</td>
+					<td class="info">{{auditacita.fechaCitaNew | date: 'yyyy-MM-dd'}}</td>
+					<td class="info">{{auditacita.fechaAccidenteNew | date: 'yyyy-MM-dd'}}</td>
+					<td class="info">{{auditacita.descripcionAccidenteNew}}</td>
+					<td class="info">{{auditacita.fechaCirugiaNew | date: 'yyyy-MM-dd'}}</td>
+					<td class="info">{{auditacita.edemaNew}}</td>
+					<td class="info">{{auditacita.dolorLocaclizacionNew}}</td>
+					<td class="info">{{auditacita.tipoDolorNew}}</td>
+					<td class="info">{{auditacita.frecuenciaDolorNew}}</td>
+					<td class="info">{{auditacita.calificacionDolorNew}}</td>
+					<td class="info">{{auditacita.movilidadArticularNew}}</td>
+					<td class="info">{{auditacita.flexibilidadNew}}</td>
+					<td class="info">{{auditacita.trofismoNew}}</td>
+					<td class="info">{{auditacita.tegumentacionNew}}</td>
+					<td class="info">{{auditacita.sensibilidadNew}}</td>
+					<td class="info">{{auditacita.posturaNew}}</td>
+					<td class="info">{{auditacita.planTratamientoNew}}</td>
+					<td class="info">{{auditacita.diagnosticoFisioterapeuticoNew}}</td>
+					<td class="info">{{auditacita.marchaNew}}</td>
+					<td class="info">{{auditacita.observacionesNew}}</td>
+					<td class="info">{{auditacita.codigoFacturaNew}}</td>
+					<td class="info">{{auditacita.valorFacturaNew}}</td>
+					<td class="info">{{auditacita.valorCitaNew}}</td>
+					<td class="info">{{auditacita.idFuerzaNew}}</td>
+					<td class="info">{{auditacita.idPersonalNew}}</td>
+					<td class="info">{{auditacita.idCausaNew}}</td>
+					<td class="info">{{auditacita.idFinalidadConsultaNew}}</td>
+					<td class="info">{{auditacita.idTipoDiagnosticoNew}}</td>
+					<td class="info">{{auditacita.idFinalidadprocedimientoNew}}</td>
+					<td class="info">{{auditacita.idAmbitoProcedimientoNew}}</td>
+					<td class="info">{{auditacita.idCupNew}}</td>
+					<td class="info">{{auditacita.idUsuarioNew}}</td>
+					<td class="info">{{auditacita.idDiagnosticosNew}}</td>
+					<td class="info">{{auditacita.fechaModificacion | date: 'yyyy-MM-dd'}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</md-table-container>
+	<md-table-pagination md-limit="vm.query.limit" md-limit-options="[5, 10, 20, 50]" md-page="vm.query.page" md-label="{page: 'Página:', rowsPerPage: 'Filas por página:', of: 'de'}" md-total="{{vm.auditacitasList.length}}"></md-table-pagination>
+</div>
+<piepagina>

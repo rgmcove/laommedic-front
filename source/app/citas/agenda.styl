@@ -1,0 +1,125 @@
+.cont-agenda
+  background-color #FAFAFA
+
+.calendar
+  width 90%
+  margin-left 5%
+  margin-top 2%
+  margin-bottom 3%
+
+.formuAgen
+  border 1px solid #0D47A1
+  box-shadow 2px 3px 30px rgba(0,0,0,0.5)
+  width 100%
+  padding 10px
+  height 30em
+
+.Botones-agenda
+  display flex
+  justify-content space-between
+  width 18em
+  margin auto
+
+.borde
+  height 18em
+
+
+
+>.dtp
+   >.dtp-time
+    background-color red
+
+.dtp > .dtp-content > .dtp-date-view > header.dtp-header
+  background #0D47A1
+
+.dtp div.dtp-time
+  background #1976D2
+
+.dtp .dtp-actual-meridien a.selected
+  background-color #1976D2
+
+.dtp .dtp-picker-time > a.dtp-select-hour.selected
+  background-color  #1976D2
+
+.dtp .dtp-hand.on
+  background-color #0D47A1
+
+.dtp div.dtp-date, .dtp div.dtp-time
+  background-color #1976D2
+
+.dtp table.dtp-picker-days tr > td > a.selected
+  background-color #1976D2
+
+.guardaragenda
+  background-color #0D47A1
+  font-family fuente
+  color white
+  &:hover
+    color #23527c
+
+.cancelaragenda
+  background-color #B71C1C
+  font-family fuente
+  color white
+
+@media screen and (max-width 600px)
+
+  .calendar
+    margin-bottom 5%
+    width 100%
+    padding 3%
+    >.fc-toolbar
+      margin-bottom 0
+      display flex
+      flex-direction column
+      align-items center
+      >.fc-left
+        padding 1em 0em
+      >.fc-center
+        padding 1em 0em
+      >.fc-right
+        width 75%
+        >.fc-button-group
+          width 100%
+          display flex
+          justify-content space-between
+          /*>button
+            flex 1*/
+
+
+
+
+@media screen and (max-width 275px)
+
+  .calendar
+    margin-bottom 5%
+    width 100%
+    margin-left 0
+
+@media screen and (max-width 392px)
+
+  .calendar
+    margin-bottom 5%
+    width 100%
+    padding 3%
+
+@media screen and (max-width 1367px)
+  .cont-agenda
+    margin-top 0em
+    margin-bottom 0em
+  .calendar
+    width 90%
+@media screen and (max-width 1360px)
+
+  .centrado
+    height -3em
+
+@media screen and (max-width 1920px) and (min-width 1800px)//agenda
+  .cont-agenda
+    margin-top 9em
+    margin-bottom 9em
+
+
+@media screen and (max-width 437px)
+  .borde
+    height 15em

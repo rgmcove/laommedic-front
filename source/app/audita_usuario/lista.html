@@ -1,0 +1,235 @@
+<div class="mostrar1">
+<div class="e1">
+	<a href="" class="desplegar-menu1">Menu <b class="caret"></b></a>
+</div>
+<nav class="lista" ng-controller="LoginCtrl as login">
+	<ul class="barra">
+	<li ng-show="login.isRoot()" class="menu-an"><a class="letra" href="#/admin"><img class="casita" src="../../img/home-page.svg" width="20px" height="30px"/>Inicio</a></li>
+  <li ng-show="login.isRoot()" class="menu-an"><a class="letra">Clinicas <b class="caret"></b></a>
+    <ul class="sub-menu">
+      <li class="items"><a class="letra" >Clinicas</a>
+        <ul class="sub-menuItems">
+          <li class="sub-item"><a class="letra" href="#/clinicas/list">Listar Clinicas</a></li>
+          <li class="sub-item"><a class="letra" href="#/clinicas/create">Crear Clinicas</a></li>
+        </ul>
+      </li>
+      <li class="items"><a class="letra" >Sedes</a>
+        <ul class="sub-menuItems">
+          <li class="sub-item"><a class="letra" href="#/sedes/list">Listar Sedes</a></li>
+          <li class="sub-item"><a class="letra" href="#/sedes/create">Crear Sedes</a></li>
+        </ul>
+      </li>
+      <li class="items"><a class="letra">Consultorios</a>
+        <ul class="sub-menuItems">
+          <li class="sub-item"><a class="letra" href="#/consultorios/list">Listar Consultorios</a></li>
+          <li class="sub-item"><a class="letra" href="#/consultorios/create">Crear Consultorios</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li ng-show="login.isRoot()" class="menu-an"><a class="letra">Funcionarios <b class="caret"></b></a>
+    <ul class="sub-menu">
+      <li class="items"><a class="letra" href="#/funcionarios/list">Listar Funcionarios</a></li>
+      <li class="items"><a class="letra" href="#/funcionarios/create">Crear Funcionarios</a></li>
+      <li class="items"><a class="letra" href="#/usuarios/list">Listar Usuarios</a></li>
+    </ul>
+  </li>
+  <li ng-show="login.isRoot()" class="menu-an"><a class="letra" >Parametrizacion <b class="caret"></b></a>
+    <ul class="sub-menu">
+      <li class="items"><a class="letra" >Personal tratante <b class="caret"></b></a>
+        <ul class="sub-menuItems">
+          <li class="sub-item"><a class="letra" href="#/pertratante/list">Listar personal tratante</a></li>
+          <li class="sub-item"><a class="letra" href="#/pertratante/create">Crear personal tratante</a></li>
+        </ul>
+      </li>
+      <li class="items"><a class="letra">Personal Atiende <b class="caret"></b></a>
+        <ul class="sub-menuItems">
+          <li class="sub-item"><a class="letra" href="#/peratiende/list">Listar personal atiende</a></li>
+          <li class="sub-item"><a class="letra" href="#/peratiende/create">Crear personal atiende</a></li>
+        </ul>
+      </li>
+      <li class="items"><a class="letra">Causas externas <b class="caret"></b></a>
+        <ul class="sub-menuItems">
+          <li class="sub-item"><a class="letra" href="#/cexternas/list">Listar causa externa</a></li>
+          <li class="sub-item"><a class="letra" href="#/cexternas/create">Crear causa externa</a></li>
+        </ul>
+      </li>
+      <li class="items"><a class="letra" >Antecedentes <b class="caret"></b></a>
+        <ul class="sub-menuItems">
+          <li class="sub-item"><a class="letra" href="#/antecedentes/list">Listar antecedentes</a></li>
+          <li class="sub-item"><a class="letra" href="#/antecedentes/create">Crear antecedentes</a></li>
+        </ul>
+      </li>
+      <li class="items"><a class="letra" >Ocupaciones <b class="caret"></b></a>
+        <ul class="sub-menuItems">
+          <li class="sub-item"><a class="letra" href="#/ocupaciones/list">Listar ocupaciones</a></li>
+          <li class="sub-item"><a class="letra" href="#/ocupaciones/create">Crear ocupaciones</a></li>
+        </ul>
+      </li>
+      <li class="items"><a class="letra" >Entidades <b class="caret"></b></a>
+        <ul class="sub-menuItems">
+          <li class="sub-item"><a class="letra" href="#/entidades/list">Listar entidades</a></li>
+          <li class="sub-item"><a class="letra" href="#/entidades/create">Crear entidades</a></li>
+        </ul>
+      </li>
+      <li class="items"><a class="letra" >Tipos antecedentes <b class="caret"></b></a>
+        <ul class="sub-menuItems">
+          <li class="sub-item"><a class="letra" href="#/tiantecedentes/list">Listar tipos antecedentes</a></li>
+          <li class="sub-item"><a class="letra" href="#/tiantecedentes/create">Crear tipos antecedentes</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li ng-show="login.isRoot()" class="menu-an"><a class="letra" >Auditoria <b class="caret"></b></a>
+    <ul class="sub-menu">
+      <li class="items"><a class="letra" href="#/auditausuarios">Usuarios</a></li>
+      <li class="items"><a class="letra" href="#/auditacitas">Citas</a></li>
+    </ul>
+  </li>
+
+	<input class="buscar" type="text" ng-model="vm.search" placeholder="Buscar Usuario">
+
+	<ul class="seccion-iniciada"
+			ng-show="login.isAuthenticated()">
+			<li class="menu-an">
+					<a href=""
+						 class="letra">{{login.getCurrentUser() | uppercase}}
+							<span class="caret">
+					</a>
+					<ul class="sub-menu">
+							<li class="seccion-cerrada">
+									<a class="cerrar" ng-click="login.logout()">Cerrar Sesión</a>
+							</li>
+					</ul>
+			</li>
+	</ul>
+</nav>
+</div>
+
+<div class="usu">
+
+    <h2 class="Titulo">AUDITORIA USUARIOS</h2>
+    <md-table-container>
+
+        <table class="table-bordered table-hover" md-table md-row-select multiple ng-model="vm.selected" md-progress="vm.promise">
+            <thead md-head md-order="vm.query.order" md-on-reorder="vm.getAuditaUsuarios">
+                <tr md-row>
+                    <th class="campos-usu"><span>Codigo</span></th>
+                    <th class="campos-usu">Usuario</th>
+                    <th class="campos-usu">Identificacion Anterior</th>
+                    <th class="campos-usu">Nombres Anterior</th>
+                    <th class="campos-usu">Apellidos Anterior</th>
+                    <th class="campos-usu">Fecha nacimiento Anterior</th>
+                    <th class="campos-usu">Edad Anterior</th>
+                    <th class="campos-usu">Email Anterior</th>
+                    <th class="campos-usu">Email 2 Anterior</th>
+                    <th class="campos-usu">Direccion Anterior</th>
+                    <th class="campos-usu">Telefono Anterior</th>
+                    <th class="campos-usu">Telefono 2 Anterior</th>
+                    <th class="campos-usu">Fecha Ingreso Anterior</th>
+                    <th class="campos-usu">Estado Civil Anterior</th>
+                    <th class="campos-usu">Escolaridad Anterior</th>
+                    <th class="campos-usu">Telefono Empresa Anterior</th>
+                    <th class="campos-usu">Ciudad Anterior</th>
+                    <th class="campos-usu">Departamento Anterior</th>
+                    <th class="campos-usu">Entidad Anterior</th>
+                    <th class="campos-usu">Tipo Documento Anterior</th>
+                    <th class="campos-usu">Sesiones Anterior</th>
+                    <th class="campos-usu">Tipo Usuario Anterior</th>
+                    <th class="campos-usu">Genero Anterior</th>
+                    <th class="campos-usu">Tipo Sangre Anterior</th>
+                    <th class="campos-usu">Codigo Anterior</th>
+                    <th class="campos-usu">Eps Anterior</th>
+                    <th class="campos-usu">Ips Anterior</th>
+										<th class="campos-usu">Identificacion Reciente</th>
+                    <th class="campos-usu">Nombres Reciente</th>
+                    <th class="campos-usu">Apellidos Reciente</th>
+                    <th class="campos-usu">Fecha nacimiento Reciente</th>
+                    <th class="campos-usu">Edad Reciente</th>
+                    <th class="campos-usu">Email Reciente</th>
+                    <th class="campos-usu">Email 2 Reciente</th>
+                    <th class="campos-usu">Direccion Reciente</th>
+                    <th class="campos-usu">Telefono Reciente</th>
+                    <th class="campos-usu">Telefono 2 Reciente</th>
+                    <th class="campos-usu">Fecha Ingreso Reciente</th>
+                    <th class="campos-usu">Estado Civil Reciente</th>
+                    <th class="campos-usu">Escolaridad Reciente</th>
+                    <th class="campos-usu">Telefono Empresa Reciente</th>
+                    <th class="campos-usu">Ciudad Reciente</th>
+                    <th class="campos-usu">Departamento Reciente</th>
+                    <th class="campos-usu">Entidad Reciente</th>
+                    <th class="campos-usu">Tipo Documento Reciente</th>
+                    <th class="campos-usu">Sesiones Reciente</th>
+                    <th class="campos-usu">Tipo Usuario Reciente</th>
+                    <th class="campos-usu">Genero Reciente</th>
+                    <th class="campos-usu">Tipo Sangre Reciente</th>
+                    <th class="campos-usu">Codigo Reciente</th>
+                    <th class="campos-usu">Eps Reciente</th>
+                    <th class="campos-usu">Ips Reciente</th>
+										<th class="campos-usu">Fecha Modificacion</th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row md-select="vm.auditausuarios" md-select-id="descCausa" md-auto-select ng-repeat="auditausuario in vm.auditausuariosList | filter: vm.search | limitTo: vm.query.limit: (vm.query.page - 1) * vm.query.limit">
+										<td class="info">{{auditausuario.codigo}}</td>
+                    <td class="info">{{auditausuario.usuario}}</td>
+                    <td class="info">{{auditausuario.idIdentificacionOld}}</td>
+                    <td class="info">{{auditausuario.primerNombreOld}} {{auditausuario.segundoNombreOld}}</td>
+                    <td class="info">{{auditausuario.primerApellidoOld}} {{auditausuario.segundoApellidoOld}}</td>
+                    <td class="info">{{auditausuario.fechaNacimientoOld | date: 'yyyy-MM-dd'}}</td>
+										<td class="info">{{auditausuario.edadOld}}</td>
+                    <td class="info">{{auditausuario.emailOld}}</td>
+                    <td class="info">{{auditausuario.email2Old}}</td>
+                    <td class="info">{{auditausuario.direccionOld}}</td>
+                    <td class="info">{{auditausuario.telefonoOld}}</td>
+                    <td class="info">{{auditausuario.telefono2Old}}</td>
+                    <td class="info">{{auditausuario.fechaIngresoOld | date: 'yyyy-MM-dd'}}</td>
+                    <td class="info">{{auditausuario.idEstadoCivilOld}}</td>
+                    <td class="info">{{auditausuario.idEscolaridadOld}}</td>
+                    <td class="info">{{auditausuario.telefonoEmpresaOld}}</td>
+                    <td class="info">{{auditausuario.idCiudadOld}}</td>
+                    <td class="info">{{auditausuario.idDepartamentoOld}}</td>
+                    <td class="info">{{auditausuario.idEntidadOld}}</td>
+                    <td class="info">{{auditausuario.idTipoDocumentoOld}}</td>
+                    <td class="info">{{auditausuario.sesionesOrdenadasOld}}</td>
+                    <td class="info">{{auditausuario.idTipoUsuarioOld}}</td>
+                    <td class="info">{{auditausuario.idGeneroOld}}</td>
+                    <td class="info">{{auditausuario.idTipoSangreOld}}</td>
+										<td class="info">{{auditausuario.codigoOld}}</td>
+										<td class="info">{{auditausuario.codigoEntidadOld}}</td>
+										<td class="info">{{auditausuario.idIpsOld}}</td>
+										<td class="info">{{auditausuario.idIdentificacionNew}}</td>
+                    <td class="info">{{auditausuario.primerNombreNew}} {{auditausuario.segundoNombreNew}}</td>
+                    <td class="info">{{auditausuario.primerApellidoNew}} {{auditausuario.segundoApellidoNew}}</td>
+                    <td class="info">{{auditausuario.fechaNacimientoNew | date: 'yyyy-MM-dd'}}</td>
+										<td class="info">{{auditausuario.edadNew}}</td>
+                    <td class="info">{{auditausuario.emailNew}}</td>
+                    <td class="info">{{auditausuario.email2New}}</td>
+                    <td class="info">{{auditausuario.direccionNew}}</td>
+                    <td class="info">{{auditausuario.telefonoNew}}</td>
+                    <td class="info">{{auditausuario.telefono2New}}</td>
+                    <td class="info">{{auditausuario.fechaIngresoNew | date: 'yyyy-MM-dd'}}</td>
+                    <td class="info">{{auditausuario.idEstadoCivilNew}}</td>
+                    <td class="info">{{auditausuario.idEscolaridadNew}}</td>
+                    <td class="info">{{auditausuario.telefonoEmpresaNew}}</td>
+                    <td class="info">{{auditausuario.idCiudadNew}}</td>
+                    <td class="info">{{auditausuario.idDepartamentoNew}}</td>
+                    <td class="info">{{auditausuario.idEntidadNew}}</td>
+                    <td class="info">{{auditausuario.idTipoDocumentoNew}}</td>
+                    <td class="info">{{auditausuario.sesionesOrdenadasNew}}</td>
+                    <td class="info">{{auditausuario.idTipoUsuarioNew}}</td>
+                    <td class="info">{{auditausuario.idGeneroNew}}</td>
+                    <td class="info">{{auditausuario.idTipoSangreNew}}</td>
+										<td class="info">{{auditausuario.codigoNew}}</td>
+										<td class="info">{{auditausuario.codigoEntidadNew}}</td>
+										<td class="info">{{auditausuario.idIpsNew}}</td>
+										<td class="info">{{auditausuario.fechaModificacion}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </md-table-container>
+
+    <md-table-pagination md-limit="vm.query.limit" md-limit-options="[5, 10, 20, 50]" md-page="vm.query.page" md-label="{page: 'Página:', rowsPerPage: 'Filas por página:', of: 'de'}" md-total="{{vm.auditausuariosList.length}}"></md-table-pagination>
+</div>
+<piepagina></piepagina>

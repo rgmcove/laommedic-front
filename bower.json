@@ -1,0 +1,76 @@
+{
+  "name": "LaomMedic-Angular",
+  "description": "Pasando LaomMedic a AngularJs",
+  "main": "server.js",
+  "authors": [
+    "Laom Group Solutions"
+  ],
+  "license": "UNLICENSED",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    },
+    "font-awesome": {
+      "main": "css/font-awesome.css"
+    },
+    "angular-material-datetimepicker": {
+      "main": [
+        "css/material-datetimepicker.min.css",
+        "js/angular-material-datetimepicker.js"
+      ]
+    },
+    "angular-touch": {
+      "main": "./angular-touch.js"
+    },
+    "moment": {
+      "main": "momentjs"
+    },
+    "angular-material-datetimepicker": {
+      "main": [
+        "js/angular-material-datetimepicker.min.js",
+        "css/material-datetimepicker.min.css"
+      ]
+    },
+    "angular-bootstrap-datetimepicker": {
+      "main": [
+        "src/js/datetimepicker.js",
+        "src/js/datetimepicker.templates.js",
+        "src/css/datetimepicker.css"
+      ]
+    }
+  },
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-resource": "^1.5.0",
+    "angular-ui-router": "^0.2.18",
+    "angular-filter": "^0.5.8",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.1",
+    "angular-material": "^1.0.6",
+    "satellizer": "^0.14.0",
+    "ng-table": "^0.8.3",
+    "angular-material-data-table": "^0.10.1",
+    "jquery-ui": "^1.11.4",
+    "fullcalendar": "^2.6.1",
+    "angular-ui-calendar": "ui.calendar#^1.0.1",
+    "font-awesome": "^4.6.2",
+    "angular-material-datetimepicker": "^1.4.0",
+    "angular-touch": "^1.5.5",
+    "momentjs": "^2.12.0",
+    "angular-bootstrap-datetimepicker": "^1.0.1"
+  }
+}
